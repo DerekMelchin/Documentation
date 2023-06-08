@@ -1,5 +1,5 @@
 <h1>QuantConnect Documentation - Local Platform</h1>
-<h4>Created on 06/01/2023</h4>
+<h4>Created on 06/08/2023</h4>
 Copyright QuantConnect 2023
 
 <p style="page-break-after: always;">&nbsp;</p>
@@ -11,6 +11,9 @@ Copyright QuantConnect 2023
 <li><a href="#1.2" class="toc-h2" target="_parent">1.2 Features</a></li>
 <li><a href="#1.3" class="toc-h2" target="_parent">1.3 Deployment Targets</a></li>
 <li><a href="#2" class="toc-h1" target="_parent">2 Installation</a></li>
+<li><a href="#2.1" class="toc-h2" target="_parent">2.1 Install on Windows</a></li>
+<li><a href="#2.2" class="toc-h2" target="_parent">2.2 Install on macOS</a></li>
+<li><a href="#2.3" class="toc-h2" target="_parent">2.3 Install on Linux</a></li>
 <li><a href="#3" class="toc-h1" target="_parent">3 Development Environment</a></li>
 <li><a href="#3.1" class="toc-h2" target="_parent">3.1 Authentication</a></li>
 <li><a href="#3.2" class="toc-h2" target="_parent">3.2 Organization Workspaces</a></li>
@@ -803,27 +806,70 @@ Copyright QuantConnect 2023
 <p style="page-break-after: always;">&nbsp;</p>
 <section id="2"><h3>2 Installation</h3></section>
 
+<div class="sub-heading-landing">
+ <div class="internal-content">
+  <p>
+   It takes 10 minutes to install Local Platform and about 1 hour to download the latest LEAN image. The Local Platform requires Docker. When you launch Local Platform, we scan for Docker and prompt you to install it to continue. We run all algorithms in a Docker container to avoid installing any dependencies on your computer.
+  </p>
+ </div>
+ <div class="docs-landing-links">
+  <div class="col-md-6 col-sm-12 docs-landing-link-wrap">
+   <div class="content clickable" onclick="window.location.href = '/docs/v2/local-platform/installation/install-on-windows'">
+    <div class="docs-internal-link">
+     <h4>
+      Install on Windows
+     </h4>
+    </div>
+   </div>
+  </div>
+  <div class="col-md-6 col-sm-12 docs-landing-link-wrap">
+   <div class="content clickable" onclick="window.location.href = '/docs/v2/local-platform/installation/install-on-macos'">
+    <div class="docs-internal-link">
+     <h4>
+      Install on macOS
+     </h4>
+    </div>
+   </div>
+  </div>
+  <div class="col-md-6 col-sm-12 docs-landing-link-wrap">
+   <div class="content clickable" onclick="window.location.href = '/docs/v2/local-platform/installation/install-on-linux'">
+    <div class="docs-internal-link">
+     <h4>
+      Install on Linux
+     </h4>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="see-also">
+  <h3>
+   See Also
+  </h3>
+  <a href="/docs/v2/lean-cli">
+   LEAN CLI
+  </a>
+  <br/>
+ </div>
+</div>
+
+<p style="page-break-after: always;">&nbsp;</p>
+<section id="2.1"><h3>2.1 Install on Windows</h3></section>
+
 <h3>Introduction</h3>
 <p>
- It takes 10 minutes to install Local Platform and about 1 hour to download the latest LEAN image. The Local Platform requires Docker and the LEAN CLI. When you launch Local Platform, we scan for these projects and prompt you to install them to continue. We run all algorithms in a Docker container to avoid installing any dependencies on your computer. The LEAN CLI is required to simplify the interactions with the cloud.
+ It takes 10 minutes to install Local Platform and about 1 hour to download the latest LEAN image. The Local Platform requires Docker. When you launch Local Platform, we scan for Docker and prompt you to install it to continue. We run all algorithms in a Docker container to avoid installing any dependencies on your computer.
 </p>
 
 <h3>Requirements</h3>
 <p>
- The following sections explain the minimum requirements to run Local Platform:
-</p>
-<h4>
- Windows System Requirements
-</h4>
-<p>
- Windows systems must meet the following minimum requirements:
+ Windows systems must meet the following minimum requirements to run Local Platform:
 </p>
 <ul>
  <li>
   A 64-bit processor
  </li>
  <li>
-  4GB RAM or more
+  4 GB RAM or more
  </li>
  <li>
   Windows 10, version 1903 or higher (released May 2019)
@@ -831,34 +877,10 @@ Copyright QuantConnect 2023
  <li>
   Hardware virtualization enabled in the BIOS
  </li>
-</ul>
-<p>
- When you download Docker Desktop, you need to select the
- <span class="box-name">
-  Enable WSL 2 Features
- </span>
- check box. After you install Docker and restart your computer, if Docker prompts you that the WSL 2 installation is incomplete, follow the instructions in the dialog shown by Docker to finish the WSL 2 installation.
-</p>
-<h4>
- Mac System Requirements
-</h4>
-<p>
- Mac systems must meet the following minimum requirements:
-</p>
-<ul>
  <li>
-  Mac hardware from 2010 or newer with an Intel processor
- </li>
- <li>
-  macOS 10.14 or newer (Mojave, Catalina, or Big Sur)
- </li>
- <li>
-  4GB RAM or more
+  20 GB hard drive or more
  </li>
 </ul>
-<h4>
- Internet Requirements
-</h4>
 <p>
  You need an internet connection for things like downloading updates, collaborating with team members, and syncing your projects with QuantConnect Cloud. Trading Firm and Institution organizations can run local backtests and research notebooks without an internet connection for up to 24 hours.
 </p>
@@ -869,16 +891,33 @@ Copyright QuantConnect 2023
     These Docker containers contain a minimal Linux-based operating system, the LEAN engine, and all the packages available to you on QuantConnect.com.
     It is therefore required to install Docker if you plan on using QuantConnect Local Platform to run the LEAN engine locally.
 </p>
-<h4>
- Install on Windows
-</h4>
 <p>
- To install Docker, see
- <a href="https://docs.docker.com/desktop/install/windows-install/" rel="nofollow" target="_blank">
-  Install Docker Desktop on Windows
- </a>
- in the Docker documentation. As you install docker, enable WSL 2 features. After you install Docker and restart your computer, if Docker prompts you that the WSL 2 installation is incomplete, follow the instructions in the dialog shown by Docker to finish the WSL 2 installation.
+ Follow these steps to install Docker:
 </p>
+<ol>
+ <li>
+  Follow the
+  <a href="https://docs.docker.com/desktop/install/windows-install/" rel="nofollow" target="_blank">
+   Install Docker Desktop on Windows
+  </a>
+  tutorial in the Docker documentation.
+ </li>
+ <p>
+  As you install docker, enable WSL 2 features.
+ </p>
+ <li>
+  Restart your computer.
+ </li>
+ <li>
+  If Docker prompts you that the WSL 2 installation is incomplete, follow the instructions in the dialog shown by Docker to finish the WSL 2 installation.
+ </li>
+ <li>
+  Open PowerShell with adminstrator privledges and run:
+ </li>
+ <div class="cli section-example-container">
+  <pre>$ wsl --update</pre>
+ </div>
+</ol>
 <p>
  By default, Docker doesn't automatically start when your computer starts.
     So, when you run the LEAN engine with QuantConnect Local Platform for the first time after starting your computer, you must manually start Docker.
@@ -892,84 +931,6 @@ Copyright QuantConnect 2023
  </span>
  check box.
 </p>
-<h4>
- Install on macOS
-</h4>
-<p>
- To install Docker, see
- <a href="https://docs.docker.com/desktop/install/mac-install/" rel="nofollow" target="_blank">
-  Install Docker Desktop on Mac
- </a>
- in the Docker documentation.
-</p>
-<p>
- If your Mac has an M1 chip, follow these additional steps:
-</p>
-<ol>
- <li>
-  Open a terminal and run the following commands to pull the AMD46 version of LEAN and Research:
-  <div class="cli section-example-container">
-   <pre>$ docker pull --platform linux/amd64 quantconnect/lean
-$ docker pull --platform linux/amd64 quantconnect/research</pre>
-  </div>
-  <p>
-   The first command enables you to run the AMD64 LEAN image by taking advantages of the
-   <a href="https://www.qemu.org/" rel="nofollow" target="_blank">
-    qemu
-   </a>
-   emulator.
-  </p>
- </li>
- <li>
-  To achieve the best performance and stability, use
-  <a href="https://github.com/abiosoft/colima" rel="nofollow" target="_blank">
-   colima
-  </a>
-  , which uses the latest stable qemu version.
-  <div class="cli section-example-container">
-   <pre>$ brew install colima
-$ colima start --cpu 4 --memory 8</pre>
-  </div>
-  <p>
-   Without colima, in some cases, the container hangs.
-  </p>
-  <li>
-   To verify it's working correctly, run:
-  </li>
-  <div class="cli section-example-container">
-   <pre>$ qemu-img --version
-qemu-img version 7.1.0 (or higher)
-$ docker context ls
-	should show colima as selected
-$ docker inspect quantconnect/lean
-	should show amd64 arch
-$ docker run -it --entrypoint bash quantconnect/lean
-	$ uname -a
-		should show x86_x64/amd64 or similar</pre>
-  </div>
-  <li>
-   If
-   <code>
-    docker context ls
-   </code>
-   does not show colima, run
-   <code>
-    colima start --edit
-   </code>
-   and make sure docker is the selected context.
-  </li>
- </li>
-</ol>
-<h4>
- Install on Linux
-</h4>
-<p>
- To install, see
- <a href="https://docs.docker.com/desktop/install/linux-install/" rel="nofollow" target="_blank">
-  Install Docker Desktop on Linux
- </a>
- in the Docker documentation.
-</p>
 
 <h3>Install Local Platform</h3>
 <p>
@@ -977,7 +938,7 @@ $ docker run -it --entrypoint bash quantconnect/lean
 </p>
 <ol>
  <li>
-  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation#03-Install-Docker">
+  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation/install-on-windows#03-Install-Docker">
    Install Docker
   </a>
   .
@@ -987,13 +948,6 @@ $ docker run -it --entrypoint bash quantconnect/lean
  </li>
  <div class="cli section-example-container">
   <pre>$ docker pull quantconnect/lean</pre>
- </div>
- <p>
-  If you're using a Mac that has an M1 chip, download the AMD64 version of LEAN and Research.
- </p>
- <div class="cli section-example-container">
-  <pre>$ docker pull --platform linux/amd64 quantconnect/lean
-$ docker pull --platform linux/amd64 quantconnect/research</pre>
  </div>
  <p>
   It takes about an hour to download the image. While it's downloading, continue to the next step. When you use Local Platform, it automatically pulls the latest LEAN image if your current version is more than a week old.
@@ -1034,10 +988,156 @@ $ docker pull --platform linux/amd64 quantconnect/research</pre>
  The following sections explain how to solve some issues you may encounter while installing Local Platform.
 </p>
 <h4>
- Docker with M1/M2/Colima
+ Docker with WSL 2 Features
 </h4>
 <p>
- If your Mac has an M1 chip, follow these additional steps:
+ When you download Docker Desktop, you need to select the
+ <span class="box-name">
+  Enable WSL 2 Features
+ </span>
+ check box. After you install Docker and restart your computer, if Docker prompts you that the WSL 2 installation is incomplete, follow the instructions in the dialog shown by Docker to finish the WSL 2 installation.
+</p>
+<h4>
+ Docker Not Found
+</h4>
+<p>
+ If you have Docker installed but the Local Platform can't detect it, update your
+ <a href="">
+  <span class="button-name">
+   Executable Path: Docker
+  </span>
+  setting
+ </a>
+ to be the path to your Docker executable.
+</p>
+<h4>
+ LEAN CLI Account Syncronization
+</h4>
+<p>
+ Local Platform and the LEAN CLI share your login credentials. If you log in to your account on Local Platform or the LEAN CLI, you log into that account for both Local Platform and the LEAN CLI.
+</p>
+<h4>
+ Further Support
+</h4>
+<p>
+ For further support with installing Local Platform,
+ <a href="https://www.quantconnect.com/docs/v2/contact">
+  contact us
+ </a>
+ .
+</p>
+
+<p style="page-break-after: always;">&nbsp;</p>
+<section id="2.2"><h3>2.2 Install on macOS</h3></section>
+
+<h3>Introduction</h3>
+<p>
+ It takes 10 minutes to install Local Platform and about 1 hour to download the latest LEAN image. The Local Platform requires Docker. When you launch Local Platform, we scan for Docker and prompt you to install it to continue. We run all algorithms in a Docker container to avoid installing any dependencies on your computer.
+</p>
+
+<h3>Requirements</h3>
+<p>
+ Mac systems must meet the following minimum requirements to run Local Platform:
+</p>
+<ul>
+ <li>
+  Mac hardware from 2010 or newer with an Intel processor
+ </li>
+ <li>
+  macOS 10.14 or newer (Mojave, Catalina, or Big Sur)
+ </li>
+ <li>
+  4 GB RAM or more
+ </li>
+ <li>
+  20 GB hard drive or more
+ </li>
+</ul>
+<p>
+ You need an internet connection for things like downloading updates, collaborating with team members, and syncing your projects with QuantConnect Cloud. Trading Firm and Institution organizations can run local backtests and research notebooks without an internet connection for up to 24 hours.
+</p>
+
+<h3>Install Docker</h3>
+<p>
+ If you run the LEAN engine locally with QuantConnect Local Platform, LEAN executes in a Docker container.
+    These Docker containers contain a minimal Linux-based operating system, the LEAN engine, and all the packages available to you on QuantConnect.com.
+    It is therefore required to install Docker if you plan on using QuantConnect Local Platform to run the LEAN engine locally.
+</p>
+<p>
+ To install Docker, see
+ <a href="https://docs.docker.com/desktop/install/mac-install/" rel="nofollow" target="_blank">
+  Install Docker Desktop on Mac
+ </a>
+ in the Docker documentation.
+</p>
+
+<h3>Install Local Platform</h3>
+<p>
+ Follow these steps to install Local Platform:
+</p>
+<ol>
+ <li>
+  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation/install-on-macos#03-Install-Docker">
+   Install Docker
+  </a>
+  .
+ </li>
+ <li>
+  Open a terminal and download the latest LEAN image.
+ </li>
+ <p>
+  If your Mac has an M1 or M2 chip, follow the steps in
+  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation/install-on-macos#06-Troubleshooting">
+   Troubleshooting
+  </a>
+  . Otherwise, run:
+ </p>
+ <div class="cli section-example-container">
+  <pre>$ docker pull quantconnect/lean</pre>
+ </div>
+ <p>
+  It takes about an hour to download the image. While it's downloading, continue to the next step. When you use Local Platform, it automatically pulls the latest LEAN image if your current version is more than a week old.
+ </p>
+ <li>
+  <a href="https://code.visualstudio.com/download" rel="nofollow" target="_blank">
+   Install Visual Studio Code
+  </a>
+  .
+ </li>
+ <li>
+  <a href="https://marketplace.visualstudio.com/items?itemName=quantconnect.quantconnect" rel="nofollow" target="_blank">
+   Install Local Platform
+  </a>
+  .
+ </li>
+</ol>
+<p>
+ If you open Visual Studio Code and it asks you to log in to QuantConnect, you successfully installed Local Platform.
+</p>
+<img alt="Initialization checklist panel" class="docs-image" src="https://cdn.quantconnect.com/i/tu/initialization-checklist-1.png"/>
+
+<h3>Next Steps</h3>
+<p>
+ Log in to your
+ <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/development-environment/authentication">
+  account
+ </a>
+ and then set up your first
+ <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/development-environment/organization-workspaces">
+  organization workspace
+ </a>
+ .
+</p>
+
+<h3>Troubleshooting</h3>
+<p>
+ The following sections explain how to solve some issues you may encounter while installing Local Platform.
+</p>
+<h4>
+ M1 or M2 Chips
+</h4>
+<p>
+ If your Mac has an M1 or M2 chip, follow these additional steps:
 </p>
 <ol>
  <li>
@@ -1095,14 +1195,127 @@ $ docker run -it --entrypoint bash quantconnect/lean
  </li>
 </ol>
 <h4>
- Docker with WSL 2 Features
+ Docker Not Found
 </h4>
 <p>
- When you download Docker Desktop, you need to select the
- <span class="box-name">
-  Enable WSL 2 Features
- </span>
- check box. After you install Docker and restart your computer, if Docker prompts you that the WSL 2 installation is incomplete, follow the instructions in the dialog shown by Docker to finish the WSL 2 installation.
+ If you have Docker installed but the Local Platform can't detect it, update your
+ <a href="">
+  <span class="button-name">
+   Executable Path: Docker
+  </span>
+  setting
+ </a>
+ to be the path to your Docker executable.
+</p>
+<h4>
+ LEAN CLI Account Syncronization
+</h4>
+<p>
+ Local Platform and the LEAN CLI share your login credentials. If you log in to your account on Local Platform or the LEAN CLI, you log into that account for both Local Platform and the LEAN CLI.
+</p>
+<h4>
+ Further Support
+</h4>
+<p>
+ For further support with installing Local Platform,
+ <a href="https://www.quantconnect.com/docs/v2/contact">
+  contact us
+ </a>
+ .
+</p>
+
+<p style="page-break-after: always;">&nbsp;</p>
+<section id="2.3"><h3>2.3 Install on Linux</h3></section>
+
+<h3>Introduction</h3>
+<p>
+ It takes 10 minutes to install Local Platform and about 1 hour to download the latest LEAN image. The Local Platform requires Docker. When you launch Local Platform, we scan for Docker and prompt you to install it to continue. We run all algorithms in a Docker container to avoid installing any dependencies on your computer.
+</p>
+
+<h3>Requirements</h3>
+<p>
+ Linux systems must meet the following minimum requirements to run Local Platform:
+</p>
+<ul>
+ <li>
+  4 GB RAM or more
+ </li>
+ <li>
+  20 GB hard drive or more
+ </li>
+</ul>
+<p>
+ You need an internet connection for things like downloading updates, collaborating with team members, and syncing your projects with QuantConnect Cloud. Trading Firm and Institution organizations can run local backtests and research notebooks without an internet connection for up to 24 hours.
+</p>
+
+<h3>Install Docker</h3>
+<p>
+ If you run the LEAN engine locally with QuantConnect Local Platform, LEAN executes in a Docker container.
+    These Docker containers contain a minimal Linux-based operating system, the LEAN engine, and all the packages available to you on QuantConnect.com.
+    It is therefore required to install Docker if you plan on using QuantConnect Local Platform to run the LEAN engine locally.
+</p>
+<p>
+ To install, see
+ <a href="https://docs.docker.com/desktop/install/linux-install/" rel="nofollow" target="_blank">
+  Install Docker Desktop on Linux
+ </a>
+ in the Docker documentation.
+</p>
+
+<h3>Install Local Platform</h3>
+<p>
+ Follow these steps to install Local Platform:
+</p>
+<ol>
+ <li>
+  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation/install-on-linux#03-Install-Docker">
+   Install Docker
+  </a>
+  .
+ </li>
+ <li>
+  Open a terminal and download the latest LEAN image.
+ </li>
+ <div class="cli section-example-container">
+  <pre>$ docker pull quantconnect/lean</pre>
+ </div>
+ <p>
+  It takes about an hour to download the image. While it's downloading, continue to the next step. When you use Local Platform, it automatically pulls the latest LEAN image if your current version is more than a week old.
+ </p>
+ <li>
+  <a href="https://code.visualstudio.com/download" rel="nofollow" target="_blank">
+   Install Visual Studio Code
+  </a>
+  .
+ </li>
+ <li>
+  <a href="https://marketplace.visualstudio.com/items?itemName=quantconnect.quantconnect" rel="nofollow" target="_blank">
+   Install Local Platform
+  </a>
+  .
+ </li>
+</ol>
+<p>
+ If you open Visual Studio Code and it asks you to log in to QuantConnect, you successfully installed Local Platform.
+</p>
+<img alt="Initialization checklist panel" class="docs-image" src="https://cdn.quantconnect.com/i/tu/initialization-checklist-1.png"/>
+
+<h3>Next Steps</h3>
+<p>
+ Log in to your
+ <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/development-environment/authentication">
+  account
+ </a>
+ and then set up your first
+ <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/development-environment/organization-workspaces">
+  organization workspace
+ </a>
+ .
+</p>
+
+<h3>Troubleshooting</h3>
+<p>
+ The following sections explain how to solve some issues you may encounter while installing Local Platform.
 </p>
 <h4>
  Docker Not Found
@@ -1153,11 +1366,7 @@ $ docker run -it --entrypoint bash quantconnect/lean
   Log in to the Algorithm Lab.
  </li>
  <li>
-  Start
-  <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation#03-Install-Docker">
-   Docker Desktop
-  </a>
-  .
+  Start Docker Desktop.
  </li>
  <li>
   Open Visual Studio Code.
@@ -1181,7 +1390,7 @@ $ docker run -it --entrypoint bash quantconnect/lean
    .
   </li>
   <li>
-   <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation#03-Install-Docker">
+   <a href="https://www.quantconnect.com/docs/v2/docs/v2/local-platform/installation">
     Docker is installed and running
    </a>
    .
@@ -3750,6 +3959,13 @@ zstandard                     0.18.0
   .
  </li>
  <img alt="Open an existing project" class="docs-image" src="https://cdn.quantconnect.com/i/tu/local-platform-open-project.png"/>
+ <li>
+  If an
+  <span class="button-name">
+   I Trust the Authors
+  </span>
+  button appears, click it.
+ </li>
 </ol>
 
 <h3>Close Projects</h3>
