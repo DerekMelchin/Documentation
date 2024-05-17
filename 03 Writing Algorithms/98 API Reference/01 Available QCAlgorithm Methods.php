@@ -293,6 +293,10 @@
 <td>Will deregister an indicator and it's associated consolidator instance so they stop receiving data updates.</td>
 </tr>
 <tr>
+<td width="33%"><a href="#DO-header">DO()</a></td>
+<td>Creates a new DerivativeOscillator indicator.</td>
+</tr>
+<tr>
 <td width="33%"><a href="#Download-header">Download()</a></td>
 <td>Downloads the requested resource as a <code>String</code>. The resource to download is specified as a <code>String</code> containing the URI.</td>
 </tr>
@@ -762,7 +766,7 @@
 </tr>
 <tr>
 <td width="33%"><a href="#SetTimeZone-header">SetTimeZone()</a></td>
-<td>Sets the time zone of the <code class="csharp">Time</code><code class="python">time</code> property in the algorithm.</td>
+<td>Sets the time zone of the <code>Time</code> property in the algorithm.</td>
 </tr>
 <tr>
 <td width="33%"><a href="#SetTradeBuilder-header">SetTradeBuilder()</a></td>
@@ -1262,7 +1266,7 @@
 </tr>
 <tr>
 <td width="33%"><a href="#SetTimeZone-header">SetTimeZone()</a></td>
-<td>Sets the time zone of the <code class="csharp">Time</code><code class="python">time</code> property in the algorithm.</td>
+<td>Sets the time zone of the <code>Time</code> property in the algorithm.</td>
 </tr>
 <tr>
 <td width="33%"><a href="#Symbol-header">Symbol()</a></td>
@@ -1419,6 +1423,10 @@
 <tr>
 <td width="33%"><a href="#DeregisterIndicator-header">DeregisterIndicator()</a></td>
 <td>Will deregister an indicator and it's associated consolidator instance so they stop receiving data updates.</td>
+</tr>
+<tr>
+<td width="33%"><a href="#DO-header">DO()</a></td>
+<td>Creates a new DerivativeOscillator indicator.</td>
 </tr>
 <tr>
 <td width="33%"><a href="#DPO-header">DPO()</a></td>

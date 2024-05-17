@@ -6,6 +6,53 @@
         <h3>AddUniverse()<span class="method-order">1/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
+   &emsp;<code>String</code>                                           name,
+   &emsp;<code>Resolution</code>                                       resolution,
+   &emsp;<code>Func&lt;DateTime, IEnumerable&lt;String&gt;&gt;</code>  selector
+   )
+        </pre>
+    </div>
+
+    <div class="method-description">
+        <p>Adds the universe to the algorithm.</p>
+    </div>
+
+    <div class="details-btn">
+        <button class="show-hide-detail" onclick="ShowHide(event, 'AddUniverse(String-name,-Resolution-resolution,-Func&lt;DateTime,-IEnumerable&lt;String&gt;&gt;-selector)-details')"><span>Show Details <img src='https://cdn.quantconnect.com/i/tu/api-chevron-show.svg' alt='arrow-show'></span></button>
+    </div>
+
+    <div class="method-details" id="AddUniverse(String-name,-Resolution-resolution,-Func&lt;DateTime,-IEnumerable&lt;String&gt;&gt;-selector)-details" style="display: none;" >
+ 
+        <div class="parameter-list">
+            <table class="parameter-table">
+                <th><strong>Parameters</strong></th>                
+                <tr><td><code>String</code></td>
+                <td>name</td>
+                <td>/</td></tr>                
+                <tr><td><code>Resolution</code></td>
+                <td>resolution</td>
+                <td>/</td></tr>                
+                <tr><td><code>Func&lt;DateTime, IEnumerable&lt;String&gt;&gt;</code></td>
+                <td>selector</td>
+                <td>/</td></tr>
+            </table>
+        </div>
+
+        <div class="method-return">
+            <h4>Return</h4>
+            <p><code>Universe</code> - The new <code>Universe</code> object.</p>
+        </div>
+
+        <div class="method-def">
+            <p>Definition at <a rel="nofollow" target="_blank" href="https://github.com/QuantConnect/Lean/blob/master/Algorithm/QCAlgorithm.Universe.cs#L494">line 494 of file Algorithm/QCAlgorithm.Universe.cs.</a></p>
+        </div>        
+    </div>
+
+    <div class="method-header">
+        <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
+        <h3>AddUniverse()<span class="method-order">2/34</span></h3>
+        <pre>
+            <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>SecurityType</code>                                     securityType,
    &emsp;<code>String</code>                                           name,
    &emsp;<code>Resolution</code>                                       resolution,
@@ -62,7 +109,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">2/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">3/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Universe</code>  universe
@@ -101,7 +148,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">3/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">4/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Func&lt;IEnumerable&lt;BaseData&gt;, IEnumerable&lt;Symbol&gt;&gt;</code>  selector
@@ -140,7 +187,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">4/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">5/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Func&lt;IEnumerable&lt;BaseData&gt;, IEnumerable&lt;String&gt;&gt;</code>  selector
@@ -179,7 +226,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">5/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">6/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -222,7 +269,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">6/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">7/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -265,7 +312,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">7/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">8/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -312,7 +359,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">8/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">9/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -359,7 +406,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">9/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">10/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -406,7 +453,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">10/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">11/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -453,7 +500,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">11/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">12/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -504,7 +551,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">12/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">13/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -555,7 +602,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">13/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">14/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                                              name,
@@ -606,7 +653,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">14/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">15/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>SecurityType</code>                                                        securityType,
@@ -661,7 +708,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">15/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">16/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>SecurityType</code>                                                        securityType,
@@ -720,7 +767,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">16/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">17/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>*String</code>                                                              name,
@@ -775,7 +822,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">17/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">18/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Func&lt;IEnumerable&lt;Fundamental&gt;, IEnumerable&lt;Symbol&gt;&gt;</code>  selector
@@ -814,7 +861,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">18/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">19/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>IDateRule</code>                                                              dateRule,
@@ -857,7 +904,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">19/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">20/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Func&lt;IEnumerable&lt;CoarseFundamental&gt;, IEnumerable&lt;Symbol&gt;&gt;</code>  coarseSelector,
@@ -900,7 +947,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">20/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">21/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>Universe</code>                                                               universe,
@@ -943,7 +990,7 @@
 
     <div class="method-header">
         <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">21/34</span></h3>
+        <h3>AddUniverse()<span class="method-order">22/34</span></h3>
         <pre>
             <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
    &emsp;<code>String</code>                                           name,
@@ -981,53 +1028,6 @@
 
         <div class="method-def">
             <p>Definition at <a rel="nofollow" target="_blank" href="https://github.com/QuantConnect/Lean/blob/master/Algorithm/QCAlgorithm.Universe.cs#L481">line 481 of file Algorithm/QCAlgorithm.Universe.cs.</a></p>
-        </div>        
-    </div>
-
-    <div class="method-header">
-        <button class="method-tag" onclick="openTopTab(event, 'Universes')">Universes</button>
-        <h3>AddUniverse()<span class="method-order">22/34</span></h3>
-        <pre>
-            <font color="#8F9CA3">Universe</font> QuantConnect.Algorithm.QCAlgorithm.AddUniverse (
-   &emsp;<code>String</code>                                           name,
-   &emsp;<code>Resolution</code>                                       resolution,
-   &emsp;<code>Func&lt;DateTime, IEnumerable&lt;String&gt;&gt;</code>  selector
-   )
-        </pre>
-    </div>
-
-    <div class="method-description">
-        <p>Creates a new universe and adds it to the algorithm. This is for coarse fundamental US Equity data and will be executed on day changes in the NewYork time zone (<code>NewYork</code>).</p>
-    </div>
-
-    <div class="details-btn">
-        <button class="show-hide-detail" onclick="ShowHide(event, 'AddUniverse(String-name,-Resolution-resolution,-Func&lt;DateTime,-IEnumerable&lt;String&gt;&gt;-selector)-details')"><span>Show Details <img src='https://cdn.quantconnect.com/i/tu/api-chevron-show.svg' alt='arrow-show'></span></button>
-    </div>
-
-    <div class="method-details" id="AddUniverse(String-name,-Resolution-resolution,-Func&lt;DateTime,-IEnumerable&lt;String&gt;&gt;-selector)-details" style="display: none;" >
- 
-        <div class="parameter-list">
-            <table class="parameter-table">
-                <th><strong>Parameters</strong></th>                
-                <tr><td><code>String</code></td>
-                <td>name</td>
-                <td>/</td></tr>                
-                <tr><td><code>Resolution</code></td>
-                <td>resolution</td>
-                <td>/</td></tr>                
-                <tr><td><code>Func&lt;DateTime, IEnumerable&lt;String&gt;&gt;</code></td>
-                <td>selector</td>
-                <td>/</td></tr>
-            </table>
-        </div>
-
-        <div class="method-return">
-            <h4>Return</h4>
-            <p><code>Universe</code> - The new <code>Universe</code> object.</p>
-        </div>
-
-        <div class="method-def">
-            <p>Definition at <a rel="nofollow" target="_blank" href="https://github.com/QuantConnect/Lean/blob/master/Algorithm/QCAlgorithm.Universe.cs#L494">line 494 of file Algorithm/QCAlgorithm.Universe.cs.</a></p>
         </div>        
     </div>
 

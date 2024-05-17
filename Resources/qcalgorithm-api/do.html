@@ -1,0 +1,66 @@
+<a id="DO-header"></a>
+<div class="method-container">
+        
+    <div class="method-header">
+        <button class="method-tag" onclick="openTopTab(event, 'Indicators')">Indicators</button>
+        <h3>DO()<span class="method-order">1/1</span></h3>
+        <pre>
+            <font color="#8F9CA3">DerivativeOscillator</font> QuantConnect.Algorithm.QCAlgorithm.DO (
+   &emsp;<code>Symbol</code>                           symbol,
+   &emsp;<code>Int32</code>                            rsiPeriod,
+   &emsp;<code>Int32</code>                            smoothingRsiPeriod,
+   &emsp;<code>Int32</code>                            doubleSmoothingRsiPeriod,
+   &emsp;<code>Int32</code>                            signalLinePeriod,
+   &emsp;<code>*Nullable&lt;Resolution&gt;</code>      resolution,
+   &emsp;<code>*Func&lt;IBaseData, Decimal&gt;</code>  selector
+   )
+        </pre>
+    </div>
+
+    <div class="method-description">
+        <p>Creates a new DerivativeOscillator indicator.</p>
+    </div>
+
+    <div class="details-btn">
+        <button class="show-hide-detail" onclick="ShowHide(event, 'DO(Symbol-symbol,-Int32-rsiPeriod,-Int32-smoothingRsiPeriod,-Int32-doubleSmoothingRsiPeriod,-Int32-signalLinePeriod,-*Nullable&lt;Resolution&gt;-resolution,-*Func&lt;IBaseData,-Decimal&gt;-selector)-details')"><span>Show Details <img src='https://cdn.quantconnect.com/i/tu/api-chevron-show.svg' alt='arrow-show'></span></button>
+    </div>
+
+    <div class="method-details" id="DO(Symbol-symbol,-Int32-rsiPeriod,-Int32-smoothingRsiPeriod,-Int32-doubleSmoothingRsiPeriod,-Int32-signalLinePeriod,-*Nullable&lt;Resolution&gt;-resolution,-*Func&lt;IBaseData,-Decimal&gt;-selector)-details" style="display: none;" >
+ 
+        <div class="parameter-list">
+            <table class="parameter-table">
+                <th><strong>Parameters</strong></th>                
+                <tr><td><code>Symbol</code></td>
+                <td>symbol</td>
+                <td>The symbol whose DO we want.</td></tr>                
+                <tr><td><code>Int32</code></td>
+                <td>rsiPeriod</td>
+                <td>The period over which to compute the RSI.</td></tr>                
+                <tr><td><code>Int32</code></td>
+                <td>smoothingRsiPeriod</td>
+                <td>The period over which to compute the smoothing RSI.</td></tr>                
+                <tr><td><code>Int32</code></td>
+                <td>doubleSmoothingRsiPeriod</td>
+                <td>The period over which to compute the double smoothing RSI.</td></tr>                
+                <tr><td><code>Int32</code></td>
+                <td>signalLinePeriod</td>
+                <td>The period over which to compute the signal line.</td></tr>                
+                <tr><td><code>*Nullable&lt;Resolution&gt;</code></td>
+                <td>resolution</td>
+                <td><span class='qualifier'>(Optional)</span> The resolution.</td></tr>                
+                <tr><td><code>*Func&lt;IBaseData, Decimal&gt;</code></td>
+                <td>selector</td>
+                <td><span class='qualifier'>(Optional)</span> Selects a value from the BaseData to send into the indicator, if None defaults to the Value property of BaseData (x =&gt; x.Value).</td></tr>
+            </table>
+        </div>
+
+        <div class="method-return">
+            <h4>Return</h4>
+            <p><code>DerivativeOscillator</code> - The DerivativeOscillator indicator for the requested symbol over the specified period.</p>
+        </div>
+
+        <div class="method-def">
+            <p>Definition at <a rel="nofollow" target="_blank" href="https://github.com/QuantConnect/Lean/blob/master/Algorithm/QCAlgorithm.Indicators.cs#L607">line 607 of file Algorithm/QCAlgorithm.Indicators.cs.</a></p>
+        </div>        
+    </div>
+</div>

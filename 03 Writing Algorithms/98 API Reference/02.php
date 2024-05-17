@@ -68,6 +68,7 @@ echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/debug.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/dem.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/dema.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/deregister-indicator.html");
+echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/do.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/download.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/dpo.html");
 echo file_get_contents(DOCS_RESOURCES."/qcalgorithm-api/ema.html");
