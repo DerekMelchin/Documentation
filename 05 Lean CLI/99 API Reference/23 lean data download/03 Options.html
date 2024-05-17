@@ -1,0 +1,368 @@
+<p>
+    The <code>lean data download</code> command supports the following options:
+</p>
+
+<table class="table qc-table">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+<!--
+        <tr>
+            <td nowrap><code>--data-provider-historical</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--ib-user-name</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--ib-account</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--ib-password</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--ib-weekly-restart-utc-time</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--oanda-account-id</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--oanda-access-token</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--oanda-environment</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--bitfinex-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--bitfinex-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--coinbase-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--coinbase-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--binance-exchange-name</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--binance-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--binanceus-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--binance-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--binanceus-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--kraken-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--kraken-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--kraken-verification-tier</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iqfeed-iqconnect</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iqfeed-username</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iqfeed-password</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iqfeed-version</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iqfeed-host</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--polygon-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--factset-auth-config-file</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iex-cloud-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--iex-price-plan</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--alpha-vantage-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--alpha-vantage-price-plan</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--coinapi-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--coinapi-product</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--thetadata-ws-url</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--thetadata-rest-url</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--thetadata-subscription-plan</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-connection-type</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-server-auth-id</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-environment</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-server-host</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-server-port</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--terminal-link-openfigi-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--bybit-api-key</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--bybit-api-secret</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--bybit-vip-level</code></td>
+            <td></td>
+        </tr>
+-->
+        <tr>
+            <td nowrap><code>--dataset &lt;value&gt;</code></td>
+            <td>The name of the dataset to download data from in non-interactive mode.</td>
+        </tr>
+        <tr>
+            <td nowrap><code>--overwrite</code></td>
+            <td>Overwrite existing local data.</td>
+        </tr>
+        <tr>
+            <td nowrap><code>-y</code> / <code>--yes</code></td>
+            <td>Automatically confirm payment confirmation prompts.</td>
+        </tr>
+<!--
+        <tr>
+            <td nowrap><code>--data-type</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--resolution</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--security-type</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--market</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--ticker</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--start</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--end</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--image</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--update</code></td>
+            <td></td>
+        </tr>
+-->
+<!--
+        <tr>
+            <td nowrap><code>--no-update</code></td>
+            <td></td>
+        </tr>
+-->
+        <tr>
+            <td nowrap><code>--lean-config</code></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td nowrap><code>--verbose</code></td>
+            <td>Enable debug logging.</td>
+        </tr>
+        <tr>
+            <td nowrap><code>--help</code></td>
+            <td>Display the help text of the <code>lean data download</code> command and exit.</td>
+        </tr>
+    </tbody>
+</table>
