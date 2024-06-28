@@ -2,45 +2,45 @@
 
 <table class="table qc-table">
 <thead><tr><th style="white-space:nowrap">Property</th><th style="white-space:nowrap">Data Type</th><th>Description</th></tr></thead>
-<tr><td><code>AskPrice</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent ask price if available</td></tr>
-<tr><td><code>AskSize</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent ask size if available</td></tr>
-<tr><td><code>BidPrice</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent bid price if available</td></tr>
-<tr><td><code>BidSize</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent bid size if available</td></tr>
-<tr><td><code>BuyingPowerModel</code></td><td><code>IBuyingPowerModel</code></td><td>Gets the buying power model used for this security</td></tr>
-<tr><td><code>Cache</code></td><td><code>SecurityCache</code></td><td>Data cache for the security to store previous price information.</td></tr>
-<tr><td><code>Close</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent close.</td></tr>
-<tr><td><code>Data</code></td><td><code>object</code></td><td>Provides dynamic access to data in the cache</td></tr>
-<tr><td><code>DataFilter</code></td><td><code>ISecurityDataFilter</code></td><td>Customizable data filter to filter outlier ticks before they are passed into user event handlers. By default all ticks are passed into the user algorithms.</td></tr>
-<tr><td><code>Exchange</code></td><td><code>SecurityExchange</code></td><td>Exchange class contains the market opening hours, along with pre-post market hours.</td></tr>
-<tr><td><code>FeeModel</code></td><td><code>IFeeModel</code></td><td>Fee model used to compute order fees for this security</td></tr>
-<tr><td><code>FillModel</code></td><td><code>IFillModel</code></td><td>Fill model used to produce fill events for this security</td></tr>
-<tr><td><code>Fundamentals</code></td><td><code>Fundamental</code></td><td>Gets the fundamental data associated with the security if there is any, otherwise None.</td></tr>
-<tr><td><code>HasData</code></td><td><code>bool</code></td><td>There has been at least one datapoint since our algorithm started running for us to determine price.</td></tr>
-<tr><td><code>High</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent high.</td></tr>
-<tr><td><code>HoldStock</code></td><td><code>bool</code></td><td>Read only property that checks if we currently own stock in the company.</td></tr>
-<tr><td><code>Holdings</code></td><td><code>SecurityHolding</code></td><td>Holdings class contains the portfolio, cash and processes order fills.</td></tr>
-<tr><td><code>Invested</code></td><td><code>bool</code></td><td>Alias for HoldStock - Do we have any of this security</td></tr>
-<tr><td><code>IsDelisted</code></td><td><code>bool</code></td><td>True if the security has been delisted from exchanges and is no longer tradable</td></tr>
-<tr><td><code>IsTradable</code></td><td><code>bool</code></td><td>Gets or sets whether or not this security should be considered tradable</td></tr>
-<tr><td><code>Leverage</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Leverage for this Security.</td></tr>
-<tr><td><code>LocalTime</code></td><td><code class="csharp">DateTime</code><code class="python">datetime</code></td><td>Local time for this market</td></tr>
-<tr><td><code>Low</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent low.</td></tr>
-<tr><td><code>MarginInterestRateModel</code></td><td><code>IMarginInterestRateModel</code></td><td>Gets or sets the margin interest rate model</td></tr>
-<tr><td><code>MarginModel</code></td><td><code>IBuyingPowerModel</code></td><td>Gets the buying power model used for this security, an alias for <code>QuantConnect.Securities.Security.BuyingPowerModel</code></td></tr>
-<tr><td><code>Open</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent open.</td></tr>
-<tr><td><code>OpenInterest</code></td><td><code>int</code></td><td>Access to the open interest of the security today</td></tr>
-<tr><td><code>PortfolioModel</code></td><td><code>ISecurityPortfolioModel</code></td><td>Gets the portfolio model used by this security</td></tr>
-<tr><td><code>Price</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Get the current value of the security.</td></tr>
-<tr><td><code>PriceVariationModel</code></td><td><code>IPriceVariationModel</code></td><td>Customizable price variation model used to define the minimum price variation of this security. By default minimum price variation is a constant find in the symbol-properties-database.</td></tr>
-<tr><td><code>QuoteCurrency</code></td><td><code>Cash</code></td><td>Gets the Cash object used for converting the quote currency to the account currency</td></tr>
-<tr><td><code>SettlementModel</code></td><td><code>ISettlementModel</code></td><td>Gets the settlement model used for this security</td></tr>
-<tr><td><code>ShortableProvider</code></td><td><code>IShortableProvider</code></td><td>This securities &lt;see cref="T:QuantConnect.Interfaces.IShortableProvider</code></td></tr>
-<tr><td><code>SlippageModel</code></td><td><code>ISlippageModel</code></td><td>Slippage model use to compute slippage of market orders</td></tr>
-<tr><td><code>Subscriptions</code></td><td><code>List&lt;SubscriptionDataConfig&gt;</code></td><td>Gets all the subscriptions for this security</td></tr>
-<tr><td><code>Symbol</code></td><td><code>Symbol</code></td><td><code>QuantConnect.Securities.Security.Symbol</code> for the asset.</td></tr>
-<tr><td><code>SymbolProperties</code></td><td><code>SymbolProperties</code></td><td>Gets the symbol properties for this security</td></tr>
-<tr><td><code>Type</code></td><td><code>SecurityType</code></td><td>Type of the security.</td></tr>
-<tr><td><code>VolatilityModel</code></td><td><code>IVolatilityModel</code></td><td>Gets the volatility model used for this security</td></tr>
-<tr><td><code>Volume</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Access to the volume of the equity today</td></tr>
-<tr><td><code>[System.String]</code></td><td><code>object</code></td><td>Gets or sets the specified custom property through the indexer. This is a wrapper around the &lt;see cref="M:QuantConnect.Securities.Security.Get``1(System.String)</code> and &lt;see cref="M:QuantConnect.Securities.Security.Add(System.String,System.Object)</code> methods.</td></tr>
+<tr><td><code>ask_price</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent ask price if available</td></tr>
+<tr><td><code>ask_size</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent ask size if available</td></tr>
+<tr><td><code>bid_price</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent bid price if available</td></tr>
+<tr><td><code>bid_size</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Gets the most recent bid size if available</td></tr>
+<tr><td><code>buying_power_model</code></td><td><code>IBuyingPowerModel</code></td><td>Gets the buying power model used for this security</td></tr>
+<tr><td><code>cache</code></td><td><code>SecurityCache</code></td><td>Data cache for the security to store previous price information.</td></tr>
+<tr><td><code>close</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent close.</td></tr>
+<tr><td><code>data</code></td><td><code>object</code></td><td>Provides dynamic access to data in the cache</td></tr>
+<tr><td><code>data_filter</code></td><td><code>ISecurityDataFilter</code></td><td>Customizable data filter to filter outlier ticks before they are passed into user event handlers. By default all ticks are passed into the user algorithms.</td></tr>
+<tr><td><code>exchange</code></td><td><code>SecurityExchange</code></td><td>Exchange class contains the market opening hours, along with pre-post market hours.</td></tr>
+<tr><td><code>fee_model</code></td><td><code>IFeeModel</code></td><td>Fee model used to compute order fees for this security</td></tr>
+<tr><td><code>fill_model</code></td><td><code>IFillModel</code></td><td>Fill model used to produce fill events for this security</td></tr>
+<tr><td><code>fundamentals</code></td><td><code>Fundamental</code></td><td>Gets the fundamental data associated with the security if there is any, otherwise None.</td></tr>
+<tr><td><code>has_data</code></td><td><code>bool</code></td><td>There has been at least one datapoint since our algorithm started running for us to determine price.</td></tr>
+<tr><td><code>high</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent high.</td></tr>
+<tr><td><code>hold_stock</code></td><td><code>bool</code></td><td>Read only property that checks if we currently own stock in the company.</td></tr>
+<tr><td><code>holdings</code></td><td><code>SecurityHolding</code></td><td>Holdings class contains the portfolio, cash and processes order fills.</td></tr>
+<tr><td><code>invested</code></td><td><code>bool</code></td><td>Alias for HoldStock - Do we have any of this security</td></tr>
+<tr><td><code>is_delisted</code></td><td><code>bool</code></td><td>True if the security has been delisted from exchanges and is no longer tradable</td></tr>
+<tr><td><code>is_tradable</code></td><td><code>bool</code></td><td>Gets or sets whether or not this security should be considered tradable</td></tr>
+<tr><td><code>item</code></td><td><code>object</code></td><td>Gets or sets the specified custom property through the indexer. This is a wrapper around the &lt;see cref="M:QuantConnect.Securities.Security.Get``1(System.String)</code> and &lt;see cref="M:QuantConnect.Securities.Security.Add(System.String,System.Object)</code> methods.</td></tr>
+<tr><td><code>leverage</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Leverage for this Security.</td></tr>
+<tr><td><code>local_time</code></td><td><code class="csharp">DateTime</code><code class="python">datetime</code></td><td>Local time for this market</td></tr>
+<tr><td><code>low</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent low.</td></tr>
+<tr><td><code>margin_interest_rate_model</code></td><td><code>IMarginInterestRateModel</code></td><td>Gets or sets the margin interest rate model</td></tr>
+<tr><td><code>margin_model</code></td><td><code>IBuyingPowerModel</code></td><td>Gets the buying power model used for this security, an alias for <code>QuantConnect.Securities.Security.BuyingPowerModel</code></td></tr>
+<tr><td><code>open</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>If this uses tradebar data, return the most recent open.</td></tr>
+<tr><td><code>open_interest</code></td><td><code>int</code></td><td>Access to the open interest of the security today</td></tr>
+<tr><td><code>portfolio_model</code></td><td><code>ISecurityPortfolioModel</code></td><td>Gets the portfolio model used by this security</td></tr>
+<tr><td><code>price</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Get the current value of the security.</td></tr>
+<tr><td><code>price_variation_model</code></td><td><code>IPriceVariationModel</code></td><td>Customizable price variation model used to define the minimum price variation of this security. By default minimum price variation is a constant find in the symbol-properties-database.</td></tr>
+<tr><td><code>quote_currency</code></td><td><code>Cash</code></td><td>Gets the Cash object used for converting the quote currency to the account currency</td></tr>
+<tr><td><code>settlement_model</code></td><td><code>ISettlementModel</code></td><td>Gets the settlement model used for this security</td></tr>
+<tr><td><code>shortable_provider</code></td><td><code>IShortableProvider</code></td><td>This securities &lt;see cref="T:QuantConnect.Interfaces.IShortableProvider</code></td></tr>
+<tr><td><code>slippage_model</code></td><td><code>ISlippageModel</code></td><td>Slippage model use to compute slippage of market orders</td></tr>
+<tr><td><code>subscriptions</code></td><td><code>List&lt;SubscriptionDataConfig&gt;</code></td><td>Gets all the subscriptions for this security</td></tr>
+<tr><td><code>symbol</code></td><td><code>Symbol</code></td><td><code>QuantConnect.Securities.Security.Symbol</code> for the asset.</td></tr>
+<tr><td><code>symbol_properties</code></td><td><code>SymbolProperties</code></td><td>Gets the symbol properties for this security</td></tr>
+<tr><td><code>type</code></td><td><code>SecurityType</code></td><td>Type of the security.</td></tr>
+<tr><td><code>volatility_model</code></td><td><code>IVolatilityModel</code></td><td>Gets the volatility model used for this security</td></tr>
+<tr><td><code>volume</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Access to the volume of the equity today</td></tr>
 </table>

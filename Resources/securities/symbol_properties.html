@@ -2,13 +2,13 @@
 
 <table class="table qc-table">
 <thead><tr><th style="white-space:nowrap">Property</th><th style="white-space:nowrap">Data Type</th><th>Description</th></tr></thead>
-<tr><td><code>ContractMultiplier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The contract multiplier for the security</td></tr>
-<tr><td><code>Description</code></td><td><code>string</code></td><td>The description of the security</td></tr>
-<tr><td><code>LotSize</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The lot size (lot size of the order) for the security</td></tr>
-<tr><td><code>MarketTicker</code></td><td><code>string</code></td><td>The market ticker</td></tr>
-<tr><td><code>MinimumOrderSize</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The minimum order size allowed For crypto/forex pairs it's expected to be expressed in base or quote currency i.e For BTC/USD the minimum order size allowed with Coinbase is 0.0001 BTC while on Binance the minimum order size allowed is 10 USD</td></tr>
-<tr><td><code>MinimumPriceVariation</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The minimum price variation (tick size) for the security</td></tr>
-<tr><td><code>PriceMagnifier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Allows normalizing live asset prices to US Dollars for Lean consumption. In some exchanges, for some securities, data is expressed in cents like for example for corn futures ('ZC').</td></tr>
-<tr><td><code>QuoteCurrency</code></td><td><code>string</code></td><td>The quote currency of the security</td></tr>
-<tr><td><code>StrikeMultiplier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Scale factor for option's strike price. For some options, such as NQX, the strike price is based on a fraction of the underlying, thus this paramater scales the strike price so that it can be used in comparation with the underlying such as in &lt;see cref="M:QuantConnect.Securities.OptionFilterUniverse.Strikes(System.Int32,System.Int32)</code></td></tr>
+<tr><td><code>contract_multiplier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The contract multiplier for the security</td></tr>
+<tr><td><code>description</code></td><td><code>string</code></td><td>The description of the security</td></tr>
+<tr><td><code>lot_size</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The lot size (lot size of the order) for the security</td></tr>
+<tr><td><code>market_ticker</code></td><td><code>string</code></td><td>The market ticker</td></tr>
+<tr><td><code>minimum_order_size</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The minimum order size allowed For crypto/forex pairs it's expected to be expressed in base or quote currency i.e For BTC/USD the minimum order size allowed with Coinbase is 0.0001 BTC while on Binance the minimum order size allowed is 10 USD</td></tr>
+<tr><td><code>minimum_price_variation</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>The minimum price variation (tick size) for the security</td></tr>
+<tr><td><code>price_magnifier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Allows normalizing live asset prices to US Dollars for Lean consumption. In some exchanges, for some securities, data is expressed in cents like for example for corn futures ('ZC').</td></tr>
+<tr><td><code>quote_currency</code></td><td><code>string</code></td><td>The quote currency of the security</td></tr>
+<tr><td><code>strike_multiplier</code></td><td><code class="csharp">decimal</code><code class="python">float</code></td><td>Scale factor for option's strike price. For some options, such as NQX, the strike price is based on a fraction of the underlying, thus this paramater scales the strike price so that it can be used in comparation with the underlying such as in &lt;see cref="M:QuantConnect.Securities.OptionFilterUniverse.Strikes(System.Int32,System.Int32)</code></td></tr>
 </table>
