@@ -1,14 +1,68 @@
 <div class="python">
-<h4 id="Security">Security</h4>
-<div class="code-snippet"><span class="object-type">class</span> <code>QuantConnect.Securities.Security</code><a class="code-source" href="https://github.com/search?q=repo%3AQuantConnect%2FLean+Security&type=code">[source]</a>
+<h4 id="IndexOption">IndexOption</h4>
+<div class="code-snippet"><span class="object-type">class</span> <code>QuantConnect.Securities.IndexOption.IndexOption</code><a class="code-source" href="https://github.com/search?q=repo%3AQuantConnect%2FLean+IndexOption&type=code">[source]</a>
 </div>
-<p>A base vehicle properties class for providing a common interface to all assets in QuantConnect.</p>
+<p>Index Options security</p>
 <div class="subsection-content">
 <div class="code-snippet"><code>clear()</code></div>
 <div class="subsection-content">
 <p>Removes every custom property that had been set.</p>
 
 
+</div>
+
+<div class="code-snippet"><code>evaluate_price_model(<span class="object-type">slice, contract</span>)</code></div>
+<div class="subsection-content">
+<p>For this option security object, evaluates the specified option contract to compute a theoretical price, IV and greeks</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">slice</span> (<span class="object-type"><a href="/docs/v2/writing-algorithms/api-reference#Slice">Slice</a></span>)
+    </li>
+    <li>
+    <span class="arg-name">contract</span> (<span class="object-type">OptionContract</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionPriceModelResult</p>
+</div>
+
+<div class="code-snippet"><code>get_aggregate_exercise_amount()</code></div>
+<div class="subsection-content">
+<p>Aggregate exercise amount or aggregate contract value. It is the total amount of cash one will pay (or receive) for the shares of the underlying stock if he/she decides to exercise (or is assigned an exercise notice). This amount is not the premium paid or received for an equity option.</p>
+
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
+</div>
+
+<div class="code-snippet"><code>get_exercise_quantity(<span class="object-type">exercise_order_quantity</span>)</code></div>
+<div class="subsection-content">
+<p>Returns the directional quantity of underlying shares that are going to change hands on exercise/assignment of all contracts held by this account, taking into account the contract's Right as well as the contract's current ContractUnitOfTrade, which may have recently changed due to a split/reverse split in the underlying security.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">exercise_order_quantity</span> (<span class="object-type">float</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
+</div>
+
+<div class="code-snippet"><code>get_intrinsic_value(<span class="object-type">underlying_price</span>)</code></div>
+<div class="subsection-content">
+<p>Intrinsic value function of the option</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlying_price</span> (<span class="object-type">float</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
 </div>
 
 <div class="code-snippet"><code>get_last_data()</code></div>
@@ -18,6 +72,48 @@
 
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">BaseData</p>
+</div>
+
+<div class="code-snippet"><code>get_pay_off(<span class="object-type">underlying_price</span>)</code></div>
+<div class="subsection-content">
+<p>Option payoff function at expiration time</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlying_price</span> (<span class="object-type">float</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
+</div>
+
+<div class="code-snippet"><code>is_auto_exercised(<span class="object-type">underlying_price</span>)</code></div>
+<div class="subsection-content">
+<p>Checks if option is eligible for automatic exercise on expiration</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlying_price</span> (<span class="object-type">float</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">bool</p>
+</div>
+
+<div class="code-snippet"><code>out_of_the_money_amount(<span class="object-type">underlying_price</span>)</code></div>
+<div class="subsection-content">
+<p>Option out of the money function</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlying_price</span> (<span class="object-type">float</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
 </div>
 
 <div class="code-snippet"><code>refresh_data_normalization_mode_property()</code></div>
@@ -73,6 +169,18 @@
 
 </div>
 
+<div class="code-snippet"><code>set_data_normalization_mode(<span class="object-type">mode</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the data normalization mode to be used by this security</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">mode</span> (<span class="object-type">DataNormalizationMode</span>)
+    </li>
+</ul>
+
+</div>
+
 <div class="code-snippet"><code>set_fee_model(<span class="object-type">feel_model</span>)</code></div>
 <div class="subsection-content">
 <p>Sets the fee model</p>
@@ -92,6 +200,58 @@
 <ul class="subsection-content">
     <li>
     <span class="arg-name">fill_model</span> (<span class="object-type">IFillModel | PyObject</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>set_filter(<span class="object-type">min_strike, max_strike, min_expiry, max_expiry</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">min_strike</span> (<span class="object-type">int</span>)
+    </li>
+    <li>
+    <span class="arg-name">max_strike</span> (<span class="object-type">int</span>)
+    </li>
+    <li>
+    <span class="arg-name">min_expiry</span> (<span class="object-type">timedelta</span>)
+    </li>
+    <li>
+    <span class="arg-name">max_expiry</span> (<span class="object-type">timedelta</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>set_filter(<span class="object-type">min_strike, max_strike, min_expiry_days, max_expiry_days</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">min_strike</span> (<span class="object-type">int</span>)
+    </li>
+    <li>
+    <span class="arg-name">max_strike</span> (<span class="object-type">int</span>)
+    </li>
+    <li>
+    <span class="arg-name">min_expiry_days</span> (<span class="object-type">int</span>)
+    </li>
+    <li>
+    <span class="arg-name">max_expiry_days</span> (<span class="object-type">int</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>set_filter(<span class="object-type">universe_func</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">universe_func</span> (<span class="object-type">PyObject | Callable[OptionFilterUniverse, OptionFilterUniverse]</span>)
     </li>
 </ul>
 
@@ -174,6 +334,52 @@
 <ul class="subsection-content">
     <li>
     <span class="arg-name">data</span> (<span class="object-type">BaseData</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>set_option_assignment_model(<span class="object-type">py_object</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the automatic option assignment model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">py_object</span> (<span class="object-type">PyObject</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>set_option_assignment_model(<span class="object-type">option_assignment_model</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the automatic option assignment model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">option_assignment_model</span> (<span class="object-type">IOptionAssignmentModel</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>set_option_exercise_model(<span class="object-type">py_object</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the option exercise model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">py_object</span> (<span class="object-type">PyObject</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>set_option_exercise_model(<span class="object-type">option_exercise_model</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the option exercise model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">option_exercise_model</span> (<span class="object-type">IOptionExerciseModel</span>)
     </li>
 </ul>
 
@@ -328,6 +534,36 @@
 <p class="subsection-content">float</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>contract_filter</code></div>
+<div class="subsection-content">
+<p>Gets or sets the contract filter</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the contract filter</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IDerivativeSecurityFilter</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>contract_multiplier</code></div>
+<div class="subsection-content">
+<p>The contract multiplier for the option security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">The contract multiplier for the option security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">int</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>contract_unit_of_trade</code></div>
+<div class="subsection-content">
+<p>When the holder of an equity option exercises one contract, or when the writer of an equity option is assigned an exercise notice on one contract, this unit of trade, usually 100 shares of the underlying security, changes hands.</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">When the holder of an equity option exercises one contract, or when the writer of an equity option is assigned an exercise notice on one contract, this unit of trade, usually 100 shares of the underlying security, changes hands.</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">int</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>data</code></div>
 <div class="subsection-content">
 <p>Provides dynamic access to data in the cache</p>
@@ -356,6 +592,26 @@
 <p class="subsection-content">Exchange class contains the market opening hours, along with pre-post market hours.</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">SecurityExchange</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>exercise_settlement</code></div>
+<div class="subsection-content">
+<p>Specifies if option contract has physical or cash settlement on exercise</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Specifies if option contract has physical or cash settlement on exercise</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">SettlementType</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>expiry</code></div>
+<div class="subsection-content">
+<p>Gets the expiration date</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the expiration date</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">datetime</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>fee_model</code></div>
@@ -444,6 +700,26 @@
 
 <div class="subsection-header">Returns:</div>
 <p class="subsection-content">True if the security has been delisted from exchanges and is no longer tradable</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">bool</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>is_option_chain</code></div>
+<div class="subsection-content">
+<p>Returns true if this is the option chain security, false if it is a specific option contract</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Returns true if this is the option chain security, false if it is a specific option contract</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">bool</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>is_option_contract</code></div>
+<div class="subsection-content">
+<p>Returns true if this is a specific option contract security, false if it is the option chain security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Returns true if this is a specific option contract security, false if it is the option chain security</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">bool</p>
 </div>
@@ -538,6 +814,26 @@
 <p class="subsection-content">int</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>option_assignment_model</code></div>
+<div class="subsection-content">
+<p>The automatic option assignment model</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">The automatic option assignment model</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionAssignmentModel</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>option_exercise_model</code></div>
+<div class="subsection-content">
+<p>Fill model used to produce fill events for this security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Fill model used to produce fill events for this security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionExerciseModel</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>portfolio_model</code></div>
 <div class="subsection-content">
 <p>Gets the portfolio model used by this security</p>
@@ -558,6 +854,16 @@
 <p class="subsection-content">float</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>price_model</code></div>
+<div class="subsection-content">
+<p>Gets or sets the price model for this option security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the price model for this option security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionPriceModel</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>price_variation_model</code></div>
 <div class="subsection-content">
 <p>Customizable price variation model used to define the minimum price variation of this security. By default minimum price variation is a constant find in the symbol-properties-database.</p>
@@ -576,6 +882,26 @@
 <p class="subsection-content">Gets the Cash object used for converting the quote currency to the account currency</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">Cash</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>right</code></div>
+<div class="subsection-content">
+<p>Gets the right being purchased (call [right to buy] or put [right to sell])</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the right being purchased (call [right to buy] or put [right to sell])</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionRight</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>scaled_strike_price</code></div>
+<div class="subsection-content">
+<p>Gets the strike price multiplied by the strike multiplier</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the strike price multiplied by the strike multiplier</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>settlement_model</code></div>
@@ -606,6 +932,26 @@
 <p class="subsection-content">Slippage model use to compute slippage of market orders</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">ISlippageModel</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>strike_price</code></div>
+<div class="subsection-content">
+<p>Gets the strike price</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the strike price</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">float</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>style</code></div>
+<div class="subsection-content">
+<p>Gets the option style</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the option style</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionStyle</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>subscriptions</code></div>
@@ -648,6 +994,16 @@
 <p class="subsection-content">SecurityType</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>underlying</code></div>
+<div class="subsection-content">
+<p>Gets or sets the underlying security object.</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the underlying security object.</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Security</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>volatility_model</code></div>
 <div class="subsection-content">
 <p>Gets the volatility model used for this security</p>
@@ -669,30 +1025,72 @@
 </div>
 
 </div>
-<div class="subsection-content">
-<div class="code-snippet"><span class="object-type">field</span> <code>NULL_LEVERAGE</code></div>
-<div class="subsection-content">
-<p>A null security leverage value</p>
-
-<div class="subsection-header">Returns:</div>
-<p class="subsection-content">A null security leverage value</p>
-<div class="subsection-header">Return type:</div>
-<p class="subsection-content">float</p>
-</div>
-
-</div>
 </div>
 <div class="csharp">
-<h4 id="Security">Security</h4>
-<div class="code-snippet"><span class="object-type">class</span> <code>QuantConnect.Securities.Security</code><a class="code-source" href="https://github.com/search?q=repo%3AQuantConnect%2FLean+Security&type=code">[source]</a>
+<h4 id="IndexOption">IndexOption</h4>
+<div class="code-snippet"><span class="object-type">class</span> <code>QuantConnect.Securities.IndexOption.IndexOption</code><a class="code-source" href="https://github.com/search?q=repo%3AQuantConnect%2FLean+IndexOption&type=code">[source]</a>
 </div>
-<p>A base vehicle properties class for providing a common interface to all assets in QuantConnect.</p>
+<p>Index Options security</p>
 <div class="subsection-content">
 <div class="code-snippet"><code>Clear()</code></div>
 <div class="subsection-content">
 <p>Removes every custom property that had been set.</p>
 
 
+</div>
+
+<div class="code-snippet"><code>EvaluatePriceModel(<span class="object-type">slice, contract</span>)</code></div>
+<div class="subsection-content">
+<p>For this option security object, evaluates the specified option contract to compute a theoretical price, IV and greeks</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">slice</span> (<span class="object-type"><a href="/docs/v2/writing-algorithms/api-reference#Slice">Slice</a></span>)
+    </li>
+    <li>
+    <span class="arg-name">contract</span> (<span class="object-type">OptionContract</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionPriceModelResult</p>
+</div>
+
+<div class="code-snippet"><code>GetAggregateExerciseAmount()</code></div>
+<div class="subsection-content">
+<p>Aggregate exercise amount or aggregate contract value. It is the total amount of cash one will pay (or receive) for the shares of the underlying stock if he/she decides to exercise (or is assigned an exercise notice). This amount is not the premium paid or received for an equity option.</p>
+
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Decimal</p>
+</div>
+
+<div class="code-snippet"><code>GetExerciseQuantity(<span class="object-type">exerciseOrderQuantity</span>)</code></div>
+<div class="subsection-content">
+<p>Returns the directional quantity of underlying shares that are going to change hands on exercise/assignment of all contracts held by this account, taking into account the contract's Right as well as the contract's current ContractUnitOfTrade, which may have recently changed due to a split/reverse split in the underlying security.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">exerciseOrderQuantity</span> (<span class="object-type">decimal</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Decimal</p>
+</div>
+
+<div class="code-snippet"><code>GetIntrinsicValue(<span class="object-type">underlyingPrice</span>)</code></div>
+<div class="subsection-content">
+<p>Intrinsic value function of the option</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlyingPrice</span> (<span class="object-type">decimal</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Decimal</p>
 </div>
 
 <div class="code-snippet"><code>GetLastData()</code></div>
@@ -702,6 +1100,48 @@
 
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">BaseData</p>
+</div>
+
+<div class="code-snippet"><code>GetPayOff(<span class="object-type">underlyingPrice</span>)</code></div>
+<div class="subsection-content">
+<p>Option payoff function at expiration time</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlyingPrice</span> (<span class="object-type">decimal</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Decimal</p>
+</div>
+
+<div class="code-snippet"><code>IsAutoExercised(<span class="object-type">underlyingPrice</span>)</code></div>
+<div class="subsection-content">
+<p>Checks if option is eligible for automatic exercise on expiration</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlyingPrice</span> (<span class="object-type">decimal</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Boolean</p>
+</div>
+
+<div class="code-snippet"><code>OutOfTheMoneyAmount(<span class="object-type">underlyingPrice</span>)</code></div>
+<div class="subsection-content">
+<p>Option out of the money function</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">underlyingPrice</span> (<span class="object-type">decimal</span>)
+    </li>
+</ul>
+
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Decimal</p>
 </div>
 
 <div class="code-snippet"><code>RefreshDataNormalizationModeProperty()</code></div>
@@ -757,6 +1197,18 @@
 
 </div>
 
+<div class="code-snippet"><code>SetDataNormalizationMode(<span class="object-type">mode</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the data normalization mode to be used by this security</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">mode</span> (<span class="object-type">DataNormalizationMode</span>)
+    </li>
+</ul>
+
+</div>
+
 <div class="code-snippet"><code>SetFeeModel(<span class="object-type">feelModel</span>)</code></div>
 <div class="subsection-content">
 <p>Sets the fee model</p>
@@ -776,6 +1228,58 @@
 <ul class="subsection-content">
     <li>
     <span class="arg-name">fillModel</span> (<span class="object-type">IFillModel | PyObject</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>SetFilter(<span class="object-type">minStrike, maxStrike, minExpiry, maxExpiry</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">minStrike</span> (<span class="object-type">Int32</span>)
+    </li>
+    <li>
+    <span class="arg-name">maxStrike</span> (<span class="object-type">Int32</span>)
+    </li>
+    <li>
+    <span class="arg-name">minExpiry</span> (<span class="object-type">TimeSpan</span>)
+    </li>
+    <li>
+    <span class="arg-name">maxExpiry</span> (<span class="object-type">TimeSpan</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>SetFilter(<span class="object-type">minStrike, maxStrike, minExpiryDays, maxExpiryDays</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">minStrike</span> (<span class="object-type">Int32</span>)
+    </li>
+    <li>
+    <span class="arg-name">maxStrike</span> (<span class="object-type">Int32</span>)
+    </li>
+    <li>
+    <span class="arg-name">minExpiryDays</span> (<span class="object-type">Int32</span>)
+    </li>
+    <li>
+    <span class="arg-name">maxExpiryDays</span> (<span class="object-type">Int32</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>SetFilter(<span class="object-type">universeFunc</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the ContractFilter to a new instance of the filter using the specified min and max strike values. Contracts with expirations further than 35 days out will also be filtered.</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">universeFunc</span> (<span class="object-type">Func[OptionFilterUniverse, OptionFilterUniverse] | PyObject</span>)
     </li>
 </ul>
 
@@ -858,6 +1362,52 @@
 <ul class="subsection-content">
     <li>
     <span class="arg-name">data</span> (<span class="object-type">BaseData</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>SetOptionAssignmentModel(<span class="object-type">pyObject</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the automatic option assignment model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">pyObject</span> (<span class="object-type">PyObject</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>SetOptionAssignmentModel(<span class="object-type">optionAssignmentModel</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the automatic option assignment model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">optionAssignmentModel</span> (<span class="object-type">IOptionAssignmentModel</span>)
+    </li>
+</ul>
+
+</div>
+
+<div class="code-snippet"><code>SetOptionExerciseModel(<span class="object-type">pyObject</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the option exercise model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">pyObject</span> (<span class="object-type">PyObject</span>)
+    </li>
+</ul>
+
+</div>
+<div class="code-snippet"><code>SetOptionExerciseModel(<span class="object-type">optionExerciseModel</span>)</code></div>
+<div class="subsection-content">
+<p>Sets the option exercise model</p>
+<div class="subsection-header">Parameters:</div>
+<ul class="subsection-content">
+    <li>
+    <span class="arg-name">optionExerciseModel</span> (<span class="object-type">IOptionExerciseModel</span>)
     </li>
 </ul>
 
@@ -1012,6 +1562,36 @@
 <p class="subsection-content">decimal</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>ContractFilter</code></div>
+<div class="subsection-content">
+<p>Gets or sets the contract filter</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the contract filter</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IDerivativeSecurityFilter</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>ContractMultiplier</code></div>
+<div class="subsection-content">
+<p>The contract multiplier for the option security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">The contract multiplier for the option security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Int32</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>ContractUnitOfTrade</code></div>
+<div class="subsection-content">
+<p>When the holder of an equity option exercises one contract, or when the writer of an equity option is assigned an exercise notice on one contract, this unit of trade, usually 100 shares of the underlying security, changes hands.</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">When the holder of an equity option exercises one contract, or when the writer of an equity option is assigned an exercise notice on one contract, this unit of trade, usually 100 shares of the underlying security, changes hands.</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Int32</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>Data</code></div>
 <div class="subsection-content">
 <p>Provides dynamic access to data in the cache</p>
@@ -1040,6 +1620,26 @@
 <p class="subsection-content">Exchange class contains the market opening hours, along with pre-post market hours.</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">SecurityExchange</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>ExerciseSettlement</code></div>
+<div class="subsection-content">
+<p>Specifies if option contract has physical or cash settlement on exercise</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Specifies if option contract has physical or cash settlement on exercise</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">SettlementType</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>Expiry</code></div>
+<div class="subsection-content">
+<p>Gets the expiration date</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the expiration date</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">DateTime</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>FeeModel</code></div>
@@ -1132,6 +1732,26 @@
 <p class="subsection-content">bool</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>IsOptionChain</code></div>
+<div class="subsection-content">
+<p>Returns true if this is the option chain security, false if it is a specific option contract</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Returns true if this is the option chain security, false if it is a specific option contract</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">bool</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>IsOptionContract</code></div>
+<div class="subsection-content">
+<p>Returns true if this is a specific option contract security, false if it is the option chain security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Returns true if this is a specific option contract security, false if it is the option chain security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">bool</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>IsTradable</code></div>
 <div class="subsection-content">
 <p>Gets or sets whether or not this security should be considered tradable</p>
@@ -1212,6 +1832,26 @@
 <p class="subsection-content">int</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>OptionAssignmentModel</code></div>
+<div class="subsection-content">
+<p>The automatic option assignment model</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">The automatic option assignment model</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionAssignmentModel</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>OptionExerciseModel</code></div>
+<div class="subsection-content">
+<p>Fill model used to produce fill events for this security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Fill model used to produce fill events for this security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionExerciseModel</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>PortfolioModel</code></div>
 <div class="subsection-content">
 <p>Gets the portfolio model used by this security</p>
@@ -1232,6 +1872,16 @@
 <p class="subsection-content">decimal</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>PriceModel</code></div>
+<div class="subsection-content">
+<p>Gets or sets the price model for this option security</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the price model for this option security</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">IOptionPriceModel</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>PriceVariationModel</code></div>
 <div class="subsection-content">
 <p>Customizable price variation model used to define the minimum price variation of this security. By default minimum price variation is a constant find in the symbol-properties-database.</p>
@@ -1250,6 +1900,26 @@
 <p class="subsection-content">Gets the Cash object used for converting the quote currency to the account currency</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">Cash</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>Right</code></div>
+<div class="subsection-content">
+<p>Gets the right being purchased (call [right to buy] or put [right to sell])</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the right being purchased (call [right to buy] or put [right to sell])</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionRight</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>ScaledStrikePrice</code></div>
+<div class="subsection-content">
+<p>Gets the strike price multiplied by the strike multiplier</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the strike price multiplied by the strike multiplier</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">decimal</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>SettlementModel</code></div>
@@ -1280,6 +1950,26 @@
 <p class="subsection-content">Slippage model use to compute slippage of market orders</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">ISlippageModel</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>StrikePrice</code></div>
+<div class="subsection-content">
+<p>Gets the strike price</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the strike price</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">decimal</p>
+</div>
+
+<div class="code-snippet"><span class="object-type">property</span> <code>Style</code></div>
+<div class="subsection-content">
+<p>Gets the option style</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets the option style</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">OptionStyle</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>Subscriptions</code></div>
@@ -1322,6 +2012,16 @@
 <p class="subsection-content">SecurityType</p>
 </div>
 
+<div class="code-snippet"><span class="object-type">property</span> <code>Underlying</code></div>
+<div class="subsection-content">
+<p>Gets or sets the underlying security object.</p>
+
+<div class="subsection-header">Returns:</div>
+<p class="subsection-content">Gets or sets the underlying security object.</p>
+<div class="subsection-header">Return type:</div>
+<p class="subsection-content">Security</p>
+</div>
+
 <div class="code-snippet"><span class="object-type">property</span> <code>VolatilityModel</code></div>
 <div class="subsection-content">
 <p>Gets the volatility model used for this security</p>
@@ -1350,18 +2050,6 @@
 <p class="subsection-content">Gets or sets the specified custom property through the indexer. This is a wrapper around the <a href="#String)">String)</a> and <a href="#Object)">Object)</a> methods.</p>
 <div class="subsection-header">Return type:</div>
 <p class="subsection-content">object</p>
-</div>
-
-</div>
-<div class="subsection-content">
-<div class="code-snippet"><span class="object-type">field</span> <code>NullLeverage</code></div>
-<div class="subsection-content">
-<p>A null security leverage value</p>
-
-<div class="subsection-header">Returns:</div>
-<p class="subsection-content">A null security leverage value</p>
-<div class="subsection-header">Return type:</div>
-<p class="subsection-content">decimal</p>
 </div>
 
 </div>
