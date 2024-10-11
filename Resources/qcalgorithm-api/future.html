@@ -131,7 +131,7 @@
 <div class="subsection-header">Parameters:</div>
 <ul class="subsection-content">
     <li>
-    <span class="arg-name">universe_func</span> (<span class="object-type">PyObject | Callable[FutureFilterUniverse, FutureFilterUniverse]</span>)
+    <span class="arg-name">universe_func</span> (<span class="object-type">Callable[FutureFilterUniverse, FutureFilterUniverse] | PyObject</span>)
     </li>
 </ul>
 
@@ -225,7 +225,7 @@
 <div class="subsection-header">Parameters:</div>
 <ul class="subsection-content">
     <li>
-    <span class="arg-name">settlement_model</span> (<span class="object-type">PyObject | ISettlementModel</span>)
+    <span class="arg-name">settlement_model</span> (<span class="object-type">ISettlementModel | PyObject</span>)
     </li>
 </ul>
 
@@ -375,7 +375,7 @@
 <div class="subsection-header">Returns:</div>
 <p class="subsection-content">Gets or sets the contract filter</p>
 <div class="subsection-header">Return type:</div>
-<p class="subsection-content">IDerivativeSecurityFilter</p>
+<p class="subsection-content">IDerivativeSecurityFilter[Symbol]</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>data</code></div>
@@ -935,7 +935,7 @@
 <div class="subsection-header">Parameters:</div>
 <ul class="subsection-content">
     <li>
-    <span class="arg-name">universeFunc</span> (<span class="object-type">Func[FutureFilterUniverse, FutureFilterUniverse] | PyObject</span>)
+    <span class="arg-name">universeFunc</span> (<span class="object-type">PyObject | Func[FutureFilterUniverse, FutureFilterUniverse]</span>)
     </li>
 </ul>
 
@@ -1029,7 +1029,7 @@
 <div class="subsection-header">Parameters:</div>
 <ul class="subsection-content">
     <li>
-    <span class="arg-name">settlementModel</span> (<span class="object-type">PyObject | ISettlementModel</span>)
+    <span class="arg-name">settlementModel</span> (<span class="object-type">ISettlementModel | PyObject</span>)
     </li>
 </ul>
 
@@ -1179,7 +1179,7 @@
 <div class="subsection-header">Returns:</div>
 <p class="subsection-content">Gets or sets the contract filter</p>
 <div class="subsection-header">Return type:</div>
-<p class="subsection-content">IDerivativeSecurityFilter</p>
+<p class="subsection-content">IDerivativeSecurityFilter&lt;Symbol&gt;</p>
 </div>
 
 <div class="code-snippet"><span class="object-type">property</span> <code>Data</code></div>
