@@ -12,6 +12,7 @@
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-ao.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-apo.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-aps.html"); ?>
+<? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-ar.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-arima.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-aroon.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-asi.html"); ?>
@@ -27,6 +28,7 @@
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-cmf.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-cmo.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-create-indicator-name.html"); ?>
+<? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-crsi.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-d.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-dch.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-dem.html"); ?>
@@ -40,6 +42,7 @@
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-fish.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-frama.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-g.html"); ?>
+<? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-he.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-heikin-ashi.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-hma.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-ht.html"); ?>
@@ -55,6 +58,7 @@
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-lwma.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-macd.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-mad.html"); ?>
+<? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-mama.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-mass.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-max.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-mfi.html"); ?>
@@ -72,6 +76,7 @@
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-pphl.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-ppo.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-psar.html"); ?>
+<? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-pso.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-r.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-rc.html"); ?>
 <? include(DOCS_RESOURCES."/qcalgorithm-api/qcalgorithm-rdv.html"); ?>
