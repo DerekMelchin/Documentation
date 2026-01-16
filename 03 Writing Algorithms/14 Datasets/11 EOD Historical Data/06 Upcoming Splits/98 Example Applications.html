@@ -1,0 +1,149 @@
+<p>
+The Upcoming Splits dataset provides timely notifications about upcoming share split or reverse split events, allowing traders to capitalize on potential price movements and manage risks effectively. Examples include the following strategies: 
+</p>
+
+<ul><li>Splits into shares with lower price will provide higher liquidity for market making algorithms.</li>
+<li>Select a universe of stocks with upcoming splits event and trade their volatility using options.</li>
+<li>Buy stocks with split factor higher than 1, sell vice versa for self-defeating ones.</li>
+</ul>
+<h4>Classic Algorithm Example</h4>
+<p>The following example algorithm holds each equity in equal size with upcoming splits within 7 days. It selects stocks that split up to more shares with lower price and tries to capitalize the higher demand of the more afforable stocks.</p>
+
+<div class="section-example-container testable">
+<pre class="python">from AlgorithmImports import *
+
+
+class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
+    
+    def initialize(self) -&gt; None:
+        self.set_start_date(2024, 9, 1)
+        self.set_end_date(2024, 12, 31)
+        self.set_cash(100000)
+        # Seed the price of each asset with its last known price to avoid trading errors.
+        self.settings.seed_initial_prices = True
+        # Universe consists of equities with upcoming splits events.
+        self._universe = self.add_universe(EODHDUpcomingSplits, self.selection)
+        # Add a Scheduled Event to rebalance the portfolio every morning
+        # based on upcoming splits signals.
+        spy = Symbol.create('SPY', SecurityType.EQUITY, Market.USA)
+        self.schedule.on(
+            self.date_rules.every_day(spy), 
+            self.time_rules.after_market_open(spy, 1), 
+            self._rebalance
+        )
+    
+    def selection(self, splits: List[EODHDUpcomingSplits]) -&gt; List[Symbol]:
+        # Split (more shares with lower price) will make the stock more affordable and drive up the demand.
+        # Hence, include all stocks that will have a split within the next 7 days.
+        # Note that spliting up the stock means the split factor &gt; 1.
+        return [x.symbol for x in splits if x.split_factor &gt; 1]
+    
+    def _rebalance(self) -&gt; None:
+        # Equally invest in each member of the universe to evenly dissipate the capital risk.
+        symbols = [s for s in self._universe.selected if self.securities[s].price]
+        total_count = len(symbols)
+        targets = [PortfolioTarget(symbol, 1. / total_count) for symbol in symbols]
+        self.set_holdings(targets, liquidate_existing_holdings=True)
+
+</pre>
+<pre class="csharp">public class UpcomingSplitsExampleAlgorithm : QCAlgorithm
+{
+    private Universe _universe;
+
+    public override void Initialize()
+    {
+        SetStartDate(2024, 9, 1);
+        SetEndDate(2024, 12, 31);
+        SetCash(100000);
+        // Seed the price of each asset with its last known price to avoid trading errors.
+        Settings.SeedInitialPrices = true;
+        // Universe consists of equities with upcoming earnings events.
+        _universe = AddUniverse&lt;EODHDUpcomingSplits&gt;((splits) =&gt; {
+            return splits
+                // Split (more shares with lower price) will make the stock more affordable and drive up the demand.
+                // Hence, include all stocks that will have a split within the next 7 days.
+                // Note that spliting up the stock means the split factor &gt; 1.
+                .Where(datum =&gt; (datum as EODHDUpcomingSplits).SplitFactor &gt; 1)
+                .Select(datum =&gt; datum.Symbol);
+        });
+        // Add a Scheduled Event to rebalance the portfolio every morning
+        // based on upcoming splits signals.
+        var spy = QuantConnect.Symbol.Create("SPY", SecurityType.Equity, Market.USA);
+        Schedule.On(DateRules.EveryDay(spy), TimeRules.AfterMarketOpen(spy, 1), Rebalance);
+    }
+
+    public void Rebalance()
+    {
+        // Equally invest in each member of the universe to evenly dissipate the capital risk.
+        var symbols = _universe.Selected.Where(s =&gt; Securities[s].Price != 0);
+        var totalCount = symbols.Count();
+        var targets = symbols
+            .Select(symbol =&gt; new PortfolioTarget(symbol, 1m / totalCount))
+            .ToList();
+        SetHoldings(targets, liquidateExistingHoldings: true);
+    }
+}</pre>
+</div>
+<h4>Framework Algorithm Example</h4>
+<p>The following example algorithm holds each equity in equal size with upcoming splits within 7 days using algorithm framework. It selects stocks that split up to more shares with lower price and tries to capitalize the higher demand of the more afforable stocks.</p>
+
+<div class="section-example-container testable">
+<pre class="python">class UpcomingSplitsExampleAlgorithm(QCAlgorithm):
+    def initialize(self) -&gt; None:
+        self.set_start_date(2024, 9, 1)
+        self.set_end_date(2024, 12, 31)
+        self.set_cash(100000)
+        self.settings.free_portfolio_value_percentage = 0.1
+
+        # Trade on daily basis based on daily upcoming splits signals.
+        self.universe_settings.resolution = Resolution.DAILY
+        # Universe consists of equities with upcoming splits events.
+        self.add_universe(EODHDUpcomingSplits, self.selection)
+
+        # Constant alpha model to emit insights for the stocks with split up event within a week, estimating their demand and price will go up.
+        # Signal stays for 2 days to fully digest the driven up demands.
+        self.add_alpha(ConstantAlphaModel(InsightType.PRICE, InsightDirection.UP, timedelta(2)))
+
+        # Equal weighting for each signal to evenly dissipate the capital risk.
+        self.set_portfolio_construction(EqualWeightingPortfolioConstructionModel(Expiry.END_OF_DAY))
+    
+    def selection(self, splits: List[EODHDUpcomingSplits]) -&gt; List[Symbol]:
+        # Split (more shares with lower price) will make the stock more affordable and drive up the demand.
+        # Hence, include the stocks with the lowest split factor that will have a split within the next 7 days.
+        # Note that spliting up the stock means the split factor &gt; 1.
+        count = 5
+        splits = [x for x in splits if x.split_factor &gt; 1]
+        if len(splits) &gt; count:
+            splits = sorted([x for x in splits if x.split_factor &gt; 1], key=lambda x: x.split_factor)[:count]
+        return [x.symbol for x in splits]</pre>
+<pre class="csharp">public class UpcomingSplitsExampleAlgorithm : QCAlgorithm
+{
+    public override void Initialize()
+    {
+        SetStartDate(2024, 9, 1);
+        SetEndDate(2024, 12, 31);
+        SetCash(100000);
+        Settings.FreePortfolioValuePercentage = 0.1m;
+
+        // Trade on daily basis based on daily upcoming splits signals.
+        UniverseSettings.Resolution = Resolution.Daily;
+        // Universe consists of equities with upcoming splits events.
+        AddUniverse&lt;EODHDUpcomingSplits&gt;((splits) =&gt; {
+            return splits.OfType&lt;EODHDUpcomingSplits&gt;()
+                // Split (more shares with lower price) will make the stock more affordable and drive up the demand.
+                // Hence, include all stocks that will have a split within the next 7 days.
+                // Note that spliting up the stock means the split factor &gt; 1.
+                .Where(datum =&gt; datum.SplitFactor &gt; 1)
+                .OrderBy(datum =&gt; datum.SplitFactor)
+                .Take(5).Select(datum =&gt; datum.Symbol);
+        });
+
+        // Constant alpha model to emit insights for the stocks with split up event within a week, estimating their demand and price will go up.
+        // Signal stays for 2 days to fully digest the driven up demands.
+        AddAlpha(new ConstantAlphaModel(InsightType.Price, InsightDirection.Up, TimeSpan.FromDays(2)));
+
+        // Equal weighting for each signal to evenly dissipate the capital risk.
+        SetPortfolioConstruction(new EqualWeightingPortfolioConstructionModel(Expiry.EndOfDay));
+    }
+}</pre>
+</div>
