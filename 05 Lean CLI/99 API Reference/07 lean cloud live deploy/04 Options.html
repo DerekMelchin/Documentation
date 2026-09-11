@@ -1,0 +1,423 @@
+<p>The <code>lean cloud live deploy</code> command supports the following options:</p>
+<table class="table qc-table">
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr>
+    <td nowrap><code>--brokerage &lt;enum: Paper Trading<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interactive Brokers<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tradier<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oanda<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitfinex<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coinbase Advanced Trade<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Binance<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zerodha<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Samco<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal Link<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trading Technologies<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kraken<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CharlesSchwab<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bybit<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TradeStation<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpaca<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tastytrade<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eze<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dYdX<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Webull<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClearStreet&gt;</code></td>
+    <td>The brokerage to use</td>
+</tr>
+<tr>
+    <td nowrap><code>--data-provider-live &lt;enum: QuantConnect<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interactive Brokers<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tradier<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oanda<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitfinex<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coinbase Advanced Trade<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Binance<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zerodha<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Samco<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal Link<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trading Technologies<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kraken<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CharlesSchwab<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Polygon<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CoinApi<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bybit<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TradeStation<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alpaca<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tastytrade<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eze<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dYdX&gt;</code></td>
+    <td>The live data provider to use</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-user-name &lt;string&gt;</code></td>
+    <td>Your Interactive Brokers username</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-account &lt;string&gt;</code></td>
+    <td>Your Interactive Brokers account id</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-password &lt;string&gt;</code></td>
+    <td>Your Interactive Brokers password</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-host &lt;string&gt;</code></td>
+    <td>External Interactive Brokers Gateway Host (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-port &lt;string&gt;</code></td>
+    <td>External Interactive Brokers Gateway Port (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-weekly-restart-utc-time &lt;string&gt;</code></td>
+    <td>Weekly restart UTC time (hh:mm:ss). Each week on Sunday your algorithm is restarted at this time, and will require 2FA verification. This is required by Interactive Brokers. Use this option explicitly to override the default value. (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--ib-financial-advisors-group-filter &lt;string&gt;</code></td>
+    <td>Use this field to filter data by a specific financial advisor group within your Interactive Brokers account. Leave blank to include all groups. (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--tradier-account-id &lt;string&gt;</code></td>
+    <td>Your Tradier account id</td>
+</tr>
+<tr>
+    <td nowrap><code>--tradier-access-token &lt;string&gt;</code></td>
+    <td>Your Tradier access token</td>
+</tr>
+<tr>
+    <td nowrap><code>--tradier-environment &lt;enum: live|paper&gt;</code></td>
+    <td>Whether the developer sandbox should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--oanda-account-id &lt;string&gt;</code></td>
+    <td>Your OANDA account id</td>
+</tr>
+<tr>
+    <td nowrap><code>--oanda-access-token &lt;string&gt;</code></td>
+    <td>Your OANDA API token</td>
+</tr>
+<tr>
+    <td nowrap><code>--oanda-environment &lt;enum: Practice|Trade&gt;</code></td>
+    <td>The environment to run in, Practice for fxTrade Practice, Trade for fxTrade</td>
+</tr>
+<tr>
+    <td nowrap><code>--bitfinex-api-key &lt;string&gt;</code></td>
+    <td>Your Bitfinex API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--bitfinex-api-secret &lt;string&gt;</code></td>
+    <td>Your Bitfinex API secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--coinbase-api-name &lt;string&gt;</code></td>
+    <td>Your Coinbase Advanced Trade API name from file</td>
+</tr>
+<tr>
+    <td nowrap><code>--coinbase-api-private-key &lt;string&gt;</code></td>
+    <td>Your Coinbase Advanced Trade API private key from file</td>
+</tr>
+<tr>
+    <td nowrap><code>--binance-exchange-name &lt;enum: Binance<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BinanceUS<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Binance-USDM-Futures<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Binance-COIN-Futures&gt;</code></td>
+    <td>Binance exchange name [Binance, BinanceUS, Binance-USDM-Futures, Binance-COIN-Futures]</td>
+</tr>
+<tr>
+    <td nowrap><code>--binance-api-key &lt;string&gt;</code></td>
+    <td>Your Binance API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--binanceus-api-key &lt;string&gt;</code></td>
+    <td>Your Binance API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--binance-api-secret &lt;string&gt;</code></td>
+    <td>Your Binance API secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--binanceus-api-secret &lt;string&gt;</code></td>
+    <td>Your Binance API secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--binance-use-testnet &lt;enum: live|paper&gt;</code></td>
+    <td>Whether the testnet should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--zerodha-api-key &lt;string&gt;</code></td>
+    <td>Your Kite Connect API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--zerodha-access-token &lt;string&gt;</code></td>
+    <td>Your Kite Connect access token</td>
+</tr>
+<tr>
+    <td nowrap><code>--zerodha-product-type &lt;enum: mis|cnc|nrml&gt;</code></td>
+    <td>MIS if you are targeting intraday products, CNC if you are targeting delivery products, NRML if you are targeting carry forward products</td>
+</tr>
+<tr>
+    <td nowrap><code>--zerodha-trading-segment &lt;enum: equity|commodity&gt;</code></td>
+    <td>EQUITY if you are trading equities on NSE or BSE, COMMODITY if you are trading commodities on MCX</td>
+</tr>
+<tr>
+    <td nowrap><code>--zerodha-history-subscription &lt;enum: true|false&gt;</code></td>
+    <td>Whether you have a history API subscription for Zerodha</td>
+</tr>
+<tr>
+    <td nowrap><code>--samco-client-id &lt;string&gt;</code></td>
+    <td>Your Samco account Client ID</td>
+</tr>
+<tr>
+    <td nowrap><code>--samco-client-password &lt;string&gt;</code></td>
+    <td>Your Samco account password</td>
+</tr>
+<tr>
+    <td nowrap><code>--samco-year-of-birth &lt;string&gt;</code></td>
+    <td>Your year of birth (YYYY) registered with Samco</td>
+</tr>
+<tr>
+    <td nowrap><code>--samco-product-type &lt;enum: mis|cnc|nrml&gt;</code></td>
+    <td>MIS if you are targeting intraday products, CNC if you are targeting delivery products, NRML if you are targeting carry forward products</td>
+</tr>
+<tr>
+    <td nowrap><code>--samco-trading-segment &lt;enum: equity|commodity&gt;</code></td>
+    <td>EQUITY if you are trading equities on NSE or BSE, COMMODITY if you are trading commodities on MCX</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-server-auth-id &lt;string&gt;</code></td>
+    <td>The Auth ID of the TerminalLink server</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-environment &lt;enum: Production|Beta&gt;</code></td>
+    <td>The environment to run in</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-server-host &lt;string&gt;</code></td>
+    <td>The host of the SAPI server</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-server-port &lt;integer&gt;</code></td>
+    <td>The port of the SAPI server</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-emsx-broker &lt;string&gt;</code></td>
+    <td>The EMSX broker to use (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-emsx-account &lt;string&gt;</code></td>
+    <td>The EMSX account to use (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-emsx-team &lt;string&gt;</code></td>
+    <td>The EMSX team to receive order events from (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--terminal-link-openfigi-api-key &lt;string&gt;</code></td>
+    <td>The Open FIGI API key to use for mapping options</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-user-name &lt;string&gt;</code></td>
+    <td>Your Trading Technologies username</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-session-password &lt;string&gt;</code></td>
+    <td>Your Trading Technologies session password</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-account-name &lt;string&gt;</code></td>
+    <td>Your Trading Technologies account name</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-rest-app-key &lt;string&gt;</code></td>
+    <td>Your Trading Technologies REST app key</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-rest-app-secret &lt;string&gt;</code></td>
+    <td>Your Trading Technologies REST app secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-rest-environment &lt;string&gt;</code></td>
+    <td>The REST environment to run in</td>
+</tr>
+<tr>
+    <td nowrap><code>--tt-order-routing-sender-comp-id &lt;string&gt;</code></td>
+    <td>The order routing sender comp id to use</td>
+</tr>
+<tr>
+    <td nowrap><code>--kraken-api-key &lt;string&gt;</code></td>
+    <td>Your Kraken API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--kraken-api-secret &lt;string&gt;</code></td>
+    <td>Your Kraken API secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--kraken-verification-tier &lt;enum: Starter|Intermediate|Pro&gt;</code></td>
+    <td>Your Kraken Verification Tier</td>
+</tr>
+<tr>
+    <td nowrap><code>--charles-schwab-user-name &lt;string&gt;</code></td>
+    <td>Your Charles Schwab login ID</td>
+</tr>
+<tr>
+    <td nowrap><code>--charles-schwab-account-number &lt;string&gt;</code></td>
+    <td>The CharlesSchwab account number</td>
+</tr>
+<tr>
+    <td nowrap><code>--bybit-api-key &lt;string&gt;</code></td>
+    <td>Your Bybit API key</td>
+</tr>
+<tr>
+    <td nowrap><code>--bybit-api-secret &lt;string&gt;</code></td>
+    <td>Your Bybit API secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--bybit-vip-level &lt;enum: VIP0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP3<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP4<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIP5<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SupremeVIP<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro3<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro4<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pro5&gt;</code></td>
+    <td>Your Bybit VIP Level</td>
+</tr>
+<tr>
+    <td nowrap><code>--bybit-use-testnet &lt;enum: live|paper|demo&gt;</code></td>
+    <td>Whether the testnet should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--trade-station-environment &lt;enum: live|paper&gt;</code></td>
+    <td>Whether Live or Paper environment should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--trade-station-account-id &lt;string&gt;</code></td>
+    <td>The TradeStation account Id</td>
+</tr>
+<tr>
+    <td nowrap><code>--alpaca-environment &lt;enum: live|paper&gt;</code></td>
+    <td>Whether Live or Paper environment should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--tastytrade-account-number &lt;string&gt;</code></td>
+    <td>The Tastytrade account number</td>
+</tr>
+<tr>
+    <td nowrap><code>--eze-domain &lt;string&gt;</code></td>
+    <td>Examples (broker provided): LIGHTSPEED, LIGHTSPEEDDELAY</td>
+</tr>
+<tr>
+    <td nowrap><code>--eze-locale &lt;string&gt;</code></td>
+    <td>Examples (broker provided): GLOBAL, AMERICAS, LIVE, DELAYED</td>
+</tr>
+<tr>
+    <td nowrap><code>--eze-user-name &lt;string&gt;</code></td>
+    <td>Your Eze Brokers username</td>
+</tr>
+<tr>
+    <td nowrap><code>--eze-password &lt;string&gt;</code></td>
+    <td>Your Eze Brokers password</td>
+</tr>
+<tr>
+    <td nowrap><code>--eze-trading-account &lt;string&gt;</code></td>
+    <td>Format: BANK;BRANCH;CUSTOMER;DEPOSIT</td>
+</tr>
+<tr>
+    <td nowrap><code>--dydx-private-key-hex &lt;string&gt;</code></td>
+    <td>Your dYdX API private key in hex format</td>
+</tr>
+<tr>
+    <td nowrap><code>--dydx-address &lt;string&gt;</code></td>
+    <td>Your dYdX wallet address</td>
+</tr>
+<tr>
+    <td nowrap><code>--dydx-subaccount-number &lt;integer&gt;</code></td>
+    <td>Your dYdX subaccount number</td>
+</tr>
+<tr>
+    <td nowrap><code>--dydx-environment &lt;enum: live|paper&gt;</code></td>
+    <td>Whether the developer sandbox should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--webull-environment &lt;enum: live|paper&gt;</code></td>
+    <td>Whether Live or Paper environment should be used</td>
+</tr>
+<tr>
+    <td nowrap><code>--webull-app-key &lt;string&gt;</code></td>
+    <td>Your Webull App Key</td>
+</tr>
+<tr>
+    <td nowrap><code>--webull-app-secret &lt;string&gt;</code></td>
+    <td>Your Webull App Secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--webull-account-id &lt;string&gt;</code></td>
+    <td>Your Webull account id</td>
+</tr>
+<tr>
+    <td nowrap><code>--webull-use-2fa &lt;boolean&gt;</code></td>
+    <td>Whether two-factor authentication (2FA) should be used (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--public-secret-key &lt;string&gt;</code></td>
+    <td>Your Public.com API secret key</td>
+</tr>
+<tr>
+    <td nowrap><code>--public-account-number &lt;string&gt;</code></td>
+    <td>Your Public.com account number. Public lets you have more than one account, so this picks which one to trade</td>
+</tr>
+<tr>
+    <td nowrap><code>--clearstreet-access-token &lt;string&gt;</code></td>
+    <td>Your Clear Street API access token</td>
+</tr>
+<tr>
+    <td nowrap><code>--clearstreet-account-id &lt;string&gt;</code></td>
+    <td>Your Clear Street account id, the numeric id of the account the algorithm trades</td>
+</tr>
+<tr>
+    <td nowrap><code>--polygon-api-key &lt;string&gt;</code></td>
+    <td>Your Polygon.io API Key</td>
+</tr>
+<tr>
+    <td nowrap><code>--polygon-license-type &lt;enum: Individual|Business&gt;</code></td>
+    <td>Select your Polygon.io subscription plan (Optional)</td>
+</tr>
+<tr>
+    <td nowrap><code>--coinapi-api-key &lt;string&gt;</code></td>
+    <td>Your coinapi.io Api Key</td>
+</tr>
+<tr>
+    <td nowrap><code>--coinapi-product &lt;enum: Free<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Startup<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Streamer<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Professional<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enterprise&gt;</code></td>
+    <td>CoinApi pricing plan (https://www.coinapi.io/market-data-api/pricing)</td>
+</tr>
+<tr>
+    <td nowrap><code>--alpaca-api-key &lt;string&gt;</code></td>
+    <td>Your Alpaca Api Key</td>
+</tr>
+<tr>
+    <td nowrap><code>--alpaca-api-secret &lt;string&gt;</code></td>
+    <td>Your Alpaca Api Secret</td>
+</tr>
+<tr>
+    <td nowrap><code>--node &lt;string&gt;</code></td>
+    <td>The name or id of the live node to run on</td>
+</tr>
+<tr>
+    <td nowrap><code>--auto-restart &lt;boolean&gt;</code></td>
+    <td>Whether automatic algorithm restarting must be enabled</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-order-events &lt;boolean&gt;</code></td>
+    <td>Whether notifications must be sent for order events</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-insights &lt;boolean&gt;</code></td>
+    <td>Whether notifications must be sent for emitted insights</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-emails &lt;string&gt;</code></td>
+    <td>A comma-separated list of 'email:subject' pairs configuring email-notifications</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-webhooks &lt;string&gt;</code></td>
+    <td>A comma-separated list of 'url:HEADER_1=VALUE_1:HEADER_2=VALUE_2:etc' pairs configuring webhook-notifications</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-sms &lt;string&gt;</code></td>
+    <td>A comma-separated list of phone numbers configuring SMS-notifications</td>
+</tr>
+<tr>
+    <td nowrap><code>--notify-telegram &lt;string&gt;</code></td>
+    <td>A comma-separated list of 'user/group Id:token(optional)' pairs configuring telegram- notifications</td>
+</tr>
+<tr>
+    <td nowrap><code>--live-cash-balance &lt;string&gt;</code></td>
+    <td>A comma-separated list of currency:amount pairs of initial cash balance</td>
+</tr>
+<tr>
+    <td nowrap><code>--live-holdings &lt;string&gt;</code></td>
+    <td>A comma-separated list of symbol:symbolId:quantity:averagePrice of initial portfolio holdings</td>
+</tr>
+<tr>
+    <td nowrap><code>--push</code></td>
+    <td>Push local modifications to the cloud before starting live trading</td>
+</tr>
+<tr>
+    <td nowrap><code>--open</code></td>
+    <td>Automatically open the live results in the browser once the deployment starts</td>
+</tr>
+<tr>
+    <td nowrap><code>--show-secrets</code></td>
+    <td>Show secrets as they are input</td>
+</tr>
+<tr>
+    <td nowrap><code>--no-browser</code></td>
+    <td>Display OAuth URL without opening the browser</td>
+</tr>
+<tr>
+    <td nowrap><code>--verbose</code></td>
+    <td>Enable debug logging</td>
+</tr>
+<tr>
+    <td nowrap><code>--help</code></td>
+    <td>Display the help text of the <code>lean cloud live deploy</code> command and exit</td>
+</tr>
+    </tbody>
+</table>
